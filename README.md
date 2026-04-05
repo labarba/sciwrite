@@ -75,22 +75,7 @@ This approach keeps the skill scoped to one project, which is useful if you are 
 
 ### In Claude Code (terminal agent)
 
-Place the skill inside the `.claude/skills/` directory of your manuscript project:
-
-```
-cd /path/to/my-manuscript
-mkdir -p .claude/skills/manuscript-review
-cp /path/to/SKILL.md .claude/skills/manuscript-review/SKILL.md
-```
-
-Then launch Claude Code from your project directory and ask for a review:
-
-```
-claude
-> Review the writing quality of draft.tex
-```
-
-Claude Code will automatically discover the skill and apply the five-pass review protocol. See `HOW-TO-USE.md` for detailed setup instructions, example prompts, and tips for each review mode.
+Place `SKILL.md` in `.claude/skills/manuscript-review/` inside your manuscript project directory, then launch Claude Code and ask for a review. See [`HOW-TO-USE.md`](HOW-TO-USE.md) for full setup instructions, example prompts, and tips for each review mode.
 
 ### In Claude's Cowork (desktop agent)
 
@@ -137,7 +122,7 @@ The skill is plain Markdown with no dependencies on any specific platform. It wo
 
 **Specify the review mode if you have a specific need.** If you already know your weakness is passive voice, ask for a targeted review rather than a full pass. This produces faster, more focused feedback.
 
-**Use the interactive mode for learning.** If you want to improve your own writing habits rather than just fix a single draft, the interactive mode walks through your text paragraph by paragraph, showing the original alongside the revised version with explanations. Over time, you will start catching the same patterns yourself.
+**Use the interactive mode for learning.** The paragraph-by-paragraph mode shows before/after revisions with explanations — useful for building long-term writing habits, not just fixing a single draft.
 
 **Review the output critically.** The skill produces well-structured editorial feedback, but your domain expertise is the final quality check. Occasionally a "smothered verb" that the skill flags is actually the standard term in your field (e.g., "polymerization" is not a nominalization that needs fixing). Use your judgment.
 
