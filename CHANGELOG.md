@@ -7,6 +7,12 @@ is 0.x, any release may include breaking changes.
 ## [Unreleased] — 0.2.0
 
 ### Changed
+- Moved everything specific to abstracts into
+  `references/summary-paragraph.md`: the Pass 6 procedure, the
+  abstract-only adjustments to Passes 1–4, the move-tagged example, and the
+  abstract-review output order. `SKILL.md` tells the agent to read it whenever
+  an abstract is under review. The wording is unchanged; `SKILL.md` drops from
+  484 to 332 lines.
 - Resolved three contradictions in the instructions. `abstract-review` runs
   Pass 6 together with Passes 1, 2, and 4 (it no longer also says "alone").
   When no journal is named, the skill reviews against default conventions and
