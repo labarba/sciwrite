@@ -1,0 +1,12 @@
+{
+  "name": "sciwrite",
+  "description": "Reviews scientific and engineering manuscripts for writing quality, following Kristin Sainani's Writing in the Sciences methodology.",
+  "version": "2.0.0-dev",
+  "author": {
+    "name": "Lorena A. Barba"
+  },
+  "homepage": "https://github.com/labarba/sciwrite",
+  "repository": "https://github.com/labarba/sciwrite",
+  "license": "CC-BY-4.0",
+  "keywords": ["scientific-writing", "manuscript", "editing", "agent-skills"]
+}
