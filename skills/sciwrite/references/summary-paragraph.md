@@ -143,6 +143,11 @@ compressed sequence of declaratives under a hard word budget; uniformity there i
 the correct form, not a defect, and flagging it manufactures findings the author
 should ignore.
 
+Skip the Pass 3 paragraph-structure checks (topic sentence, one main idea,
+logical flow) for a summary paragraph as well: Pass 6 judges its structure
+against the sequence of moves, and the two would give conflicting advice. The
+sentence-level checks in Pass 3 still apply.
+
 ### Pass 4: Acronyms
 
 - **In a summary paragraph, apply a stricter threshold.** Nature instructs authors

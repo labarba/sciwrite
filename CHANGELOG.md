@@ -7,6 +7,13 @@ is 0.x, any release may include breaking changes.
 ## [Unreleased] — 0.2.0
 
 ### Changed
+- Paragraph-level checks. Pass 3 is now "Sentence and Paragraph
+  Architecture": it adds overloaded sentences, dangling and misplaced
+  modifiers, vague "this", and paragraph structure (one main idea, topic
+  sentence, logical flow, transitions that fit the logic). Pass 1 adds empty
+  "There is/are … that" openers and negative constructions. The paragraph
+  checks are skipped for abstracts, where Pass 6 judges structure. New test 8
+  covers these checks.
 - New "Gotchas" section: leave math, citation and reference commands, and
   markup intact in source files; never change the strength of a claim or
   invent results, numbers or citations; keep the author's spelling variety;

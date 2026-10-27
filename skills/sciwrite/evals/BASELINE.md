@@ -67,6 +67,15 @@ gained two assertions on locations and content notes.
 6. **Three trigger queries are incomplete.** "is my abstract too long…
    pasting it below" and "Here's the discussion…" contain no text, and the
    wind-tunnel query names a file the run cannot read. Add the text.
+7. **Test 8, two assertions are too narrow** (found in PR 6). The citation
+   assertion fails when the review rightly cuts the off-topic sentence along
+   with its citation [6]; it should require citations to stay intact in
+   sentences that are kept or moved. The vague-"this" assertion fails when the
+   review folds "This motivates the present study" into the next sentence,
+   which is a valid fix; accept either.
+8. **Test 7 control still has one real flaw** (found in PR 4): sentences 4
+   and 5 don't say which Reynolds number "the highest value" and "15% lower"
+   refer to. Reviews flag it as MAJOR in most runs.
 
 ## Observations for later work
 
