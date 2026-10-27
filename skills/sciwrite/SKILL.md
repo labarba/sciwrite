@@ -61,8 +61,8 @@ Passes 1–5 are independent dimensions — order among them does not change the
 findings. Pass 6 is different: it evaluates the abstract as a whole against a
 required rhetorical structure, and it runs **last**, after the sentence-level
 passes have cleaned up the prose it is judging. Run Pass 6 whenever the document
-includes an abstract or summary paragraph, and run it alone in **abstract-review**
-mode.
+includes an abstract or summary paragraph. In **abstract-review** mode, run it
+together with Passes 1, 2, and 4, all scoped to the abstract.
 
 ### Pass 1: Clutter Extraction
 
@@ -236,7 +236,9 @@ afford.
 - Does the sample size (N) in the Abstract match Table 1?
 - Do percentages in Results match the raw numbers in Tables?
 - Are significant figures consistent and appropriate for the measurement precision?
-- Do Figure graphics match the corresponding Table values?
+- Do Figure graphics match the corresponding Table values? Run this check only
+  when you can see the figures (as images or their underlying data). If you have
+  only the text, say that you skipped it; do not guess what a figure shows.
 
 **Citation integrity — the "Telephone Game" audit:**
 Flag any statistic presented as established fact but cited only through secondary
@@ -259,15 +261,17 @@ back out to general significance is close to universal.
 
 **Step 1 — Establish the active parameters.**
 
-Ask the user for the target venue if it is not stated, and record the parameters at
-the top of the report so the author can see what the findings are being measured
-against. Defaults, if no venue is given:
+If the target venue is not stated, do not stop to ask: use the defaults below and
+invite the author to name the venue so the findings can be checked against its
+rules. Either way, record the parameters at the top of the report so the author
+can see what the findings are being measured against. Defaults, if no venue is
+given:
 
 | Parameter | Default | Notes |
 |-----------|---------|-------|
 | Word target | 200 | Nature's stated target for a summary paragraph |
 | Word ceiling | 300 | Applies only when the broader-perspective move is present |
-| Citations in summary | Permitted | Nature requires the summary be fully referenced; most other journals forbid citations in abstracts entirely — confirm before flagging either way |
+| Citations in summary | Permitted | Nature requires the summary be fully referenced; most other journals forbid citations in abstracts entirely — if the venue is unknown, report citation findings as conditional, not as errors |
 | Numbers and units | Essential only | See Step 5 |
 | Abbreviations | Essential only | See Pass 4 |
 
@@ -465,8 +469,10 @@ are reported in their own subsection.
 - **Never alter scientific content.** You improve delivery, not substance. If a
   claim seems wrong, flag it as a content note but do not change it.
 - **Respect disciplinary conventions.** Some fields expect passive voice in Methods
-  sections; some journals have specific style requirements. Ask about the target
-  journal if not specified. This matters most in Pass 6, where the rules are venue-
+  sections; some journals have specific style requirements. If the target journal
+  is not specified, do not stop to ask: review against general conventions, say
+  that you have done so, and invite the author to name the journal. This matters
+  most in Pass 6, where the rules are venue-
   dependent in both directions: Nature requires the summary paragraph to be fully
   referenced, while most journals forbid citations in abstracts outright, and word
   limits vary widely. Applying one venue's rules to another produces confident,
