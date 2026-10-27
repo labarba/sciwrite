@@ -7,6 +7,17 @@ format for abstracts.
 
 ## Pass 6: Summary Paragraph Structure
 
+Structural review stays a writing review: you verify that a result statement
+exists, is marked, and sits in the right position — you do not judge whether the
+result is the paper's most important finding, or whether the comparison to prior
+work is fair. Those are content questions and belong to peer review.
+
+The rules are venue-dependent in both directions: Nature requires the summary
+paragraph to be fully referenced, while most journals forbid citations in
+abstracts outright, and word limits vary widely. When the venue is unknown, use
+the defaults, state that you have done so, and flag venue-dependent items as
+conditional rather than as errors.
+
 The reference structure is Nature's, which is prescriptive about both the sequence
 of rhetorical moves and how many sentences each is allowed. Other venues differ in
 budget but rarely in sequence — the funnel from general field to specific result and
@@ -157,7 +168,31 @@ sentence-level checks in Pass 3 still apply.
   saves, or if the acronym is more widely recognized than the expansion. Otherwise
   spell it out or cut the term. See Pass 6 for the essentiality test.
 
+## Severity for Pass 6 findings
+
+- **CRITICAL:** a required move that is missing entirely. A missing move is
+  CRITICAL even when every sentence present is clear, because the paragraph
+  omits information the reader needs and no edit to the surviving text supplies
+  it. The commonest instance is an abstract with no result statement: it
+  describes what was studied and never says what was found, and it fails in
+  front of an editor before it reaches a reviewer.
+- **MAJOR:** moves present but out of sequence, word count over the active
+  ceiling, a sentence budget missed by more than one, or a non-essential number
+  or acronym in moves 1–3. These are ordering and proportion problems — the
+  information is all there, and the fix is rearrangement or compression rather
+  than new material.
+- **MINOR:** a sentence budget missed by one.
+
+Accessibility notes from Step 6 carry no severity tag. They are advisory and are
+reported in their own subsection.
+
 ## Output format for abstracts
+
+In a full or section review, the Pass 6 section of the report holds: the active
+parameters (venue, word target, ceiling, citation policy); the move-tagged
+rendering; missing moves, out-of-order moves, budget overruns, and non-essential
+numbers and abbreviations, each with original text, suggested revision,
+rationale, and severity; and the accessibility notes, advisory and untagged.
 
 ### Move-tagged rendering (Pass 6 artifact)
 

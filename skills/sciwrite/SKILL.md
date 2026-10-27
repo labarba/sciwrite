@@ -1,18 +1,18 @@
 ---
 name: sciwrite
 description: >
-  Use this skill when asked to review, edit, or improve the writing quality of a
-  scientific or engineering manuscript. Triggers include: "review my writing,"
-  "check my manuscript," "improve clarity," "clean up the prose," "edit for
-  journal submission," "writing review," or any request to evaluate sentence-level
-  quality, eliminate clutter, fix passive voice, or enforce keyword consistency in
-  a research paper draft. Also triggers on "review my abstract," "check my summary
-  paragraph," "does my abstract follow Nature's structure," "is my abstract too
-  long," or any request to evaluate whether an abstract states its result clearly,
-  is structured correctly, or is readable outside the specialty. Also triggers when
-  asked to prepare a manuscript for submission to a specific journal. Do NOT use for
-  content/technical review of methods or results, statistical analysis, or citation
-  formatting.
+  Reviews and edits the writing in scientific and engineering research: journal
+  and conference papers, thesis chapters, and abstracts. Cuts clutter, revives
+  smothered verbs, fixes sentence and paragraph structure, and checks that terms,
+  acronyms and numbers are consistent. Use this skill whenever someone wants
+  their own research writing reviewed, tightened, clarified or made to flow, or
+  checked for wordiness, passive voice or consistency, at any length: a whole
+  manuscript, one section, a paragraph, or a single pasted sentence, even if
+  they never say "manuscript" or "review". Also use it for abstracts and summary
+  paragraphs: whether the main result is stated clearly, the structure follows
+  the journal's expectations, and the length fits. Do not
+  use for technical peer review of methods or results, statistics, citation
+  formatting, translation, or writing new text.
 license: CC-BY-4.0
 metadata:
   author: Lorena A. Barba
@@ -33,11 +33,7 @@ components. For abstracts and summary paragraphs you also check structure, again
 the sequence of rhetorical moves Nature prescribes for its summary paragraphs.
 
 You do NOT alter scientific content, data, or technical claims. You improve how
-those claims are delivered. This holds for structural review too: you verify that a
-result statement exists, is marked, and sits in the right position — you do not
-judge whether the result is the paper's most important finding, or whether the
-comparison to prior work is fair. Those are content questions and belong to peer
-review.
+those claims are delivered.
 
 ## Review Modes
 
@@ -96,12 +92,10 @@ Mistakes that are easy to make in a writing review, and how to avoid them.
 
 Apply these sequentially. Each pass focuses on one dimension of writing quality.
 
-Passes 1–5 are independent dimensions — order among them does not change the
-findings. Pass 6 is different: it evaluates the abstract as a whole against a
-required rhetorical structure, and it runs **last**, after the sentence-level
-passes have cleaned up the prose it is judging. Run Pass 6 whenever the document
-includes an abstract or summary paragraph. In **abstract-review** mode, run it
-together with Passes 1, 2, and 4, all scoped to the abstract.
+Passes 1–5 are independent dimensions. Pass 6 evaluates the abstract as a whole
+and runs **last**, whenever the document includes an abstract or summary
+paragraph. In **abstract-review** mode, run it together with Passes 1, 2, and 4,
+all scoped to the abstract.
 
 **Abstracts need a reference file.** Whenever the text under review includes an
 abstract or summary paragraph, and always in **abstract-review** mode, read
@@ -366,11 +360,7 @@ Produce a structured report with this skeleton:
 [Same format]
 
 ### Pass 6: Summary Paragraph Structure — [N issues found]
-[Active parameters: venue, word target, ceiling, citation policy]
-[Move-tagged rendering — see references/summary-paragraph.md]
-[Missing moves, out-of-order moves, budget overruns, non-essential numbers and
-abbreviations, each with original text, suggested revision, rationale, severity]
-[Accessibility notes — advisory, untagged]
+[Only when an abstract was reviewed; contents in references/summary-paragraph.md]
 
 ### Minor edits
 [All MINOR findings as a compact list: location, original → revision. No rationale.]
@@ -462,23 +452,14 @@ Tag each finding with a severity:
 
 - **CRITICAL** — Actively misleads the reader (wrong number, term inconsistency
   that implies a different variable, passive voice that hides important
-  accountability), **or, in Pass 6, a required move that is missing entirely.**
-  A missing move is CRITICAL even when every sentence present is clear, because the
-  paragraph omits information the reader needs and no edit to the surviving text
-  supplies it. The commonest instance is an abstract with no result statement: it
-  describes what was studied and never says what was found, and it fails in front
-  of an editor before it reaches a reviewer.
+  accountability).
 - **MAJOR** — Significantly impairs clarity (buried predicates, heavy nominalization,
-  dense clutter). In Pass 6: moves present but out of sequence, word count over the
-  active ceiling, a sentence budget missed by more than one, or a non-essential
-  number or acronym in moves 1–3. These are ordering and proportion problems — the
-  information is all there, and the fix is rearrangement or compression rather than
-  new material.
+  dense clutter).
 - **MINOR** — Worth fixing but does not impede understanding (slight wordiness,
-  optional style improvements). In Pass 6: a sentence budget missed by one.
+  optional style improvements).
 
-Accessibility notes from Pass 6 Step 6 carry no severity tag. They are advisory and
-are reported in their own subsection.
+Pass 6 findings have their own severity rules in
+[references/summary-paragraph.md](references/summary-paragraph.md).
 
 ## Constraints
 
@@ -487,13 +468,9 @@ are reported in their own subsection.
 - **Respect disciplinary conventions.** Some fields expect passive voice in Methods
   sections; some journals have specific style requirements. If the target journal
   is not specified, do not stop to ask: review against general conventions, say
-  that you have done so, and invite the author to name the journal. This matters
-  most in Pass 6, where the rules are venue-
-  dependent in both directions: Nature requires the summary paragraph to be fully
-  referenced, while most journals forbid citations in abstracts outright, and word
-  limits vary widely. Applying one venue's rules to another produces confident,
-  wrong advice. When the venue is unknown, use the defaults, state that you have
-  done so, and flag venue-dependent items as conditional rather than as errors.
+  that you have done so, and invite the author to name the journal. Applying one
+  venue's rules to another produces confident, wrong advice, so flag
+  venue-dependent items as conditional rather than as errors.
 - **Preserve the author's voice.** The goal is clarity, not homogeneity. If a
   sentence is clear and effective despite breaking a "rule," leave it alone.
 - **Be specific.** Every suggestion must include the original text and a concrete
