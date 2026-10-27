@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this skill, please cite it as below."
+type: software
+title: "SciWrite: an Agent Skill for reviewing the writing quality of scientific manuscripts"
+authors:
+  - family-names: Barba
+    given-names: Lorena A.
+    affiliation: The George Washington University
+version: 2.0.0-dev
+license: CC-BY-4.0
+repository-code: "https://github.com/labarba/sciwrite"
+keywords:
+  - agent skills
+  - scientific writing
+  - manuscript review
+references:
+  - type: generic
+    title: "Writing in the Sciences"
+    authors:
+      - family-names: Sainani
+        given-names: Kristin
+    institution:
+      name: Stanford University
+    url: "https://www.coursera.org/learn/sciwrite"

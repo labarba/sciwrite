@@ -1,0 +1,15 @@
+{
+  "name": "sciwrite",
+  "description": "SciWrite: an Agent Skill for reviewing the writing quality of scientific manuscripts.",
+  "owner": {
+    "name": "Lorena A. Barba"
+  },
+  "plugins": [
+    {
+      "name": "sciwrite",
+      "source": "./",
+      "description": "Reviews scientific and engineering manuscripts for writing quality, following Kristin Sainani's Writing in the Sciences methodology.",
+      "category": "writing"
+    }
+  ]
+}

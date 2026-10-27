@@ -1,5 +1,5 @@
 ---
-name: manuscript-writing-review
+name: sciwrite
 description: >
   Use this skill when asked to review, edit, or improve the writing quality of a
   scientific or engineering manuscript. Triggers include: "review my writing,"
@@ -13,6 +13,12 @@ description: >
   asked to prepare a manuscript for submission to a specific journal. Do NOT use for
   content/technical review of methods or results, statistical analysis, or citation
   formatting.
+license: CC-BY-4.0
+metadata:
+  author: Lorena A. Barba
+  version: "2.0.0-dev"
+  source: Kristin Sainani, Writing in the Sciences (Stanford, CC-BY lectures)
+  repository: https://github.com/labarba/sciwrite
 ---
 
 # Manuscript Writing Review — Scientific Clarity and Precision

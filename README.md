@@ -51,7 +51,7 @@ This is the simplest way to get started. No terminal or coding experience is req
 
 This makes the skill available in all your conversations and in Cowork.
 
-1. Download this repository as a ZIP file (on the repository's main page, click the green **Code** button, then **Download ZIP**).
+1. Download `sciwrite-<version>.zip` from the latest [release](https://github.com/labarba/sciwrite/releases/latest). (Don't use GitHub's green **Code → Download ZIP** button: that archive contains the whole repository, not just the skill.)
 2. Open [claude.ai](https://claude.ai). In the left sidebar, click **Customize** (the toolbox icon), then go to **Skills**.
 3. Click the **+** button, then **+ Create skill**, and upload the ZIP file.
 4. The skill will appear in your Skills list. Make sure its toggle is turned on.
@@ -63,13 +63,13 @@ This makes the skill available in all your conversations and in Cowork.
 
 Claude will recognize that the request matches the skill, load it, and produce a structured review report with specific findings and suggested revisions. You can also upload your manuscript as a PDF or paste individual sections.
 
-> **Note:** The ZIP file must contain the skill folder at the root level. If your ZIP contains `sciwrite/SKILL.md` (not just a loose `SKILL.md`), you're set.
+> **Note:** The release ZIP contains the `sciwrite/` skill folder at its root, which is what the upload expects. If you installed an earlier version named `manuscript-writing-review`, remove it first so the two don't compete.
 
 **Option B: Add to a specific Project's knowledge base**
 
 If you prefer to limit the skill to a particular project (for example, a project dedicated to a specific manuscript):
 
-1. Download the `SKILL.md` file from this repository.
+1. Download the [`skills/sciwrite/SKILL.md`](skills/sciwrite/SKILL.md) file from this repository.
 2. Open or create a **Project** in Claude.ai.
 3. In the Project's knowledge base, click **Add content** and upload the `SKILL.md` file.
 4. Start a conversation inside that Project and ask Claude to review your writing.
@@ -78,7 +78,32 @@ This approach keeps the skill scoped to one project, which is useful if you are 
 
 ### In Claude Code (terminal agent)
 
-Place `SKILL.md` in `.claude/skills/manuscript-review/` inside your manuscript project directory, then launch Claude Code and ask for a review. See [`HOW-TO-USE.md`](HOW-TO-USE.md) for full setup instructions, example prompts, and tips for each review mode.
+**Install as a plugin (recommended).** This repository is also a Claude Code plugin marketplace. In a Claude Code session, run:
+
+```
+/plugin install sciwrite --marketplace labarba/sciwrite
+```
+
+On older versions of Claude Code, use two steps instead: `/plugin marketplace add labarba/sciwrite`, then `/plugin install sciwrite@sciwrite`. Run `/plugin marketplace update sciwrite` later to get new versions.
+
+**Or copy the skill folder.** Copy `skills/sciwrite/` into `.claude/skills/` in your manuscript project (available in that project only) or into `~/.claude/skills/` (available in every project):
+
+```bash
+git clone https://github.com/labarba/sciwrite.git
+mkdir -p ~/.claude/skills
+cp -r sciwrite/skills/sciwrite ~/.claude/skills/
+```
+
+The folder must be named `sciwrite` to match the skill's `name` field.
+
+**Ask for a review.** Launch `claude` from your manuscript's directory and ask in plain language. Some example prompts, from broadest to most targeted:
+
+- Full review: `Review the writing quality of draft.tex`
+- One section: `Review the writing in my Introduction (sections/introduction.tex)`
+- One pass: `Audit my Results for keyword consistency — make sure group names match what I defined in Methods`
+- Interactive: `Walk me through improving my Introduction, paragraph by paragraph`
+
+Claude Code can also apply the edits for you when you ask (for example, `Apply the CRITICAL and MAJOR revisions to draft.tex`), or you can review them and make the changes yourself. Tell it your target journal so it can respect that journal's conventions.
 
 ### In Claude's Cowork (desktop agent)
 
