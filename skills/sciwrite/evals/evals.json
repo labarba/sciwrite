@@ -63,7 +63,8 @@
         "Does not alter equation (1), and changes inline math only to correct a flagged number (such as the mesh size)",
         "Keeps every \\cite, \\citet, \\ref, \\eqref and \\label command intact in the proposed revisions",
         "Gives a location (line number or section) for every finding",
-        "Does not tag content suggestions (e.g., reporting benchmark values or residual norms) as CRITICAL, MAJOR or MINOR writing findings"
+        "Does not tag content suggestions (e.g., reporting benchmark values or residual norms) as CRITICAL, MAJOR or MINOR writing findings",
+        "Keeps the author's US spelling in revisions (e.g., does not change \"center\" or \"centerlines\" to \"centre\" or \"centrelines\")"
       ]
     },
     {

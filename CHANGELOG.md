@@ -7,6 +7,12 @@ is 0.x, any release may include breaking changes.
 ## [Unreleased] — 0.2.0
 
 ### Changed
+- New "Gotchas" section: leave math, citation and reference commands, and
+  markup intact in source files; never change the strength of a claim or
+  invent results, numbers or citations; keep the author's spelling variety;
+  treat field vocabulary as vocabulary, not jargon; do not edit the manuscript
+  unless asked; run the terminology and numbers passes across the whole
+  document. Test 3 gains an assertion on US spelling.
 - Less noisy reports. Repeated problems are grouped into one finding with a
   count; MINOR findings collapse into a one-line "Minor edits" list; every
   finding gives a location; suggestions about content go under "Content notes"
