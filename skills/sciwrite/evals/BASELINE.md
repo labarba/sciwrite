@@ -85,3 +85,11 @@ gained two assertions on locations and content notes.
   "centre". US vs UK spelling belongs in the gotchas (PR 5).
 - The test 3 review reported 14 findings on two paragraphs, several of them
   content suggestions. Evidence for grouping and noise control (PR 4).
+9. **Test 9 does not discriminate** (found in PR 7). It scores 9/9 with and
+   without the skill: the model already knows the basic conventions for
+   Results and Discussion sections. Make its planted problems subtler, or
+   replace assertions that pass in both configurations.
+10. **Test 8, positive-construction assertion conflicts with the skill.** The
+    Pass 1 rule offers "not important" → "unimportant", but the assertion's
+    examples ("overlooked", "ignored") led the grader to fail "unimportant".
+    Align the two.

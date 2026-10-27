@@ -160,6 +160,28 @@
         "Does not treat \"large-eddy simulation\" or \"velocity deficit\" as jargon to cut",
         "Keeps the citations [3, 4], [5], [6] and [7] intact in revisions"
       ]
+    },
+    {
+      "id": 9,
+      "name": "micromixer-results-discussion",
+      "group": "planted-errors",
+      "source": "Written for this test set. Answer key in evals/ANSWER_KEY.md. Reference number [8] is fictitious; Stroock et al. is the published origin of the herringbone mixer.",
+      "prompt": "Please review the writing in my Results and Discussion sections (evals/files/micromixer.md).",
+      "expected_output": "A section review that catches what each section is doing wrong: Results that lead with the figure and slip into interpretation; a Discussion that opens with methods, repeats the Results numbers, has no limitations, and ends on an overclaim, which is flagged as a content note without being rewritten.",
+      "files": [
+        "evals/files/micromixer.md"
+      ],
+      "assertions": [
+        "Flags \"Figure 3 shows the mixing index...\" as leading with the figure instead of the finding, and proposes a sentence that states the finding with the figure in parentheses",
+        "Flags the mechanism sentence (\"This is because the herringbone grooves generate transverse vortices...\") as interpretation that belongs in the Discussion",
+        "Flags that the Discussion opens by restating the methods instead of the main finding",
+        "Flags that the Discussion repeats the outlet mixing indices and pressure drops already given in the Results",
+        "Flags \"Our results prove that herringbone channels are the optimal design for all lab-on-a-chip applications\" as claiming more than the results show",
+        "Does not silently weaken the overclaim in a revision: any measured alternative is offered as an option for the author",
+        "Notes that the Discussion has no limitations",
+        "Does not flag the past tense of the Results (\"was 0.92\") as an error",
+        "Keeps \"Stroock et al. [8]\" intact"
+      ]
     }
   ]
 }

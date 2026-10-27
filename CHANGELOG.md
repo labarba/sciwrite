@@ -7,6 +7,13 @@ is 0.x, any release may include breaking changes.
 ## [Unreleased] — 0.2.0
 
 ### Changed
+- Section-specific guidance in `references/section-guidance.md`, read in full
+  and section reviews: what the Introduction, Methods, Results and Discussion
+  must each do (the Introduction's funnel to a stated gap; Results that lead
+  with findings and leave interpretation out; a Discussion that opens with the
+  main finding, compares with previous work, states limitations, and treats
+  overreach as a content note). Findings are reported under Pass 3. New test
+  9 covers Results and Discussion.
 - Paragraph-level checks. Pass 3 is now "Sentence and Paragraph
   Architecture": it adds overloaded sentences, dangling and misplaced
   modifiers, vague "this", and paragraph structure (one main idea, topic
