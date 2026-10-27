@@ -14,6 +14,12 @@ is 0.x, any release may include breaking changes.
 - Merged `HOW-TO-USE.md` into the README.
 
 ### Added
+- Test set in `skills/sciwrite/evals/`: seven output tests (two from
+  Sainani's lecture 1.4, four invented passages with planted errors and an
+  answer key, one control), 20 trigger queries split into train and
+  validation sets, and the baseline results in `BASELINE.md`.
+- `tools/run_evals.py` and `tools/grade_evals.py` to run the tests through
+  `claude -p` and grade them with a blind LLM judge.
 - Pass 6, Summary Paragraph Structure, and a new `abstract-review` mode.
   Pass 6 checks an abstract against the sequence of rhetorical moves in
   Nature's summary-paragraph guide, with sentence budgets, an essentiality

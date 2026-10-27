@@ -1,0 +1,43 @@
+\section{Methods}
+
+We simulate the two-dimensional lid-driven cavity flow at Reynolds number
+$\mathrm{Re} = UL/\nu = 1000$, where $U$ is the lid velocity, $L$ is the side
+length of the cavity, and $\nu$ is the kinematic viscosity. In order to solve
+the incompressible Navier--Stokes equations,
+\begin{equation}
+  \nabla\cdot\mathbf{u} = 0, \qquad
+  \frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u}\cdot\nabla)\mathbf{u}
+  = -\nabla p + \frac{1}{\mathrm{Re}}\nabla^{2}\mathbf{u},
+  \label{eq:ns}
+\end{equation}
+we use a second-order finite-volume method on a uniform fine mesh of
+$256 \times 256$ cells~\cite{ferziger2002}. Due to the fact that the flow at
+this Reynolds number is steady, we march equation~\eqref{eq:ns} in time until
+the residual falls below $10^{-8}$.
+
+A grid convergence study, in which the solution on the fine mesh was compared
+with solutions on two coarser meshes of $64 \times 64$ and $128 \times 128$
+cells and with the benchmark data of \citet{ghia1982}, was performed to verify
+the solver.
+
+\section{Results}
+
+It is worth noting that the center of the primary vortex on the high-resolution
+grid lies at $(x, y) = (0.531, 0.565)$, in close agreement with the benchmark.
+We performed an analysis of the velocity profiles along the cavity centerlines
+and found that the maximum deviation from the benchmark data is 2.1\%
+(Table~\ref{tab:error}). On the $512 \times 512$ fine mesh, the secondary
+vortices in the bottom corners are resolved with at least 20 cells across their
+diameter. The SGS contribution is negligible at this Reynolds number.
+
+\begin{table}
+  \caption{Maximum deviation of centerline velocities from the benchmark data
+    of \citet{ghia1982}.}
+  \label{tab:error}
+  \begin{tabular}{lcc}
+    Mesh & $u$ along $x = 0.5$ & $v$ along $y = 0.5$ \\
+    $64 \times 64$   & 9.8\% & 11.2\% \\
+    $128 \times 128$ & 4.1\% & 4.6\% \\
+    $256 \times 256$ & 2.4\% & 2.0\% \\
+  \end{tabular}
+\end{table}
