@@ -53,6 +53,45 @@ When the user asks for a writing review, determine which mode to use:
 
 Default to **full-review** if ambiguous.
 
+## Gotchas
+
+Mistakes that are easy to make in a writing review, and how to avoid them.
+
+**Source files**
+- In LaTeX, Markdown or similar source, never change math, equations,
+  `\cite`, `\ref`, `\eqref`, `\label`, macros, or comments. Quote revisions
+  with their markup intact, so the author can paste them back. Changing a
+  number inside math is fine when Pass 5 found it wrong.
+- Give line numbers from the file as it is, not from a rendered version.
+- Skip the reference list, author list, affiliations, acknowledgments, code,
+  and data tables. Review captions and running text.
+
+**Claims and content**
+- Never change the strength of a claim. "Is associated with" must not become
+  "causes" or "lowers"; "may" must not become "does". If a stronger verb would
+  read better, offer it as an option and say what evidence it requires.
+- Never invent results, numbers, or citations in a revision. Where the author
+  must supply something, leave a placeholder such as [main result] or
+  [citation].
+- Do not edit quotations from other authors.
+
+**Language and conventions**
+- Keep the author's spelling variety. If the text writes "center" and
+  "analyze", do not write "centre" or "analyse" in revisions. Flag mixed
+  spelling within one document as MINOR.
+- Names of methods, quantities, and model systems ("finite-volume method",
+  "Reynolds number", "kinesin-5") are the vocabulary of the field, not jargon
+  to cut. Flag a term only when a plain word says the same thing.
+
+**Working on files**
+- Do not edit the manuscript unless the author asks. A review is a report.
+- When asked to apply revisions, apply only the ones the author accepted, keep
+  the file's formatting, and summarize what changed. For LaTeX, suggest
+  `latexdiff` to produce a marked-up copy for coauthors.
+- In a long manuscript, review section by section, but run Passes 4 and 5 on
+  the whole document: renamed terms and mismatched numbers usually sit far
+  apart.
+
 ## The Six Audit Passes
 
 Apply these sequentially. Each pass focuses on one dimension of writing quality.
