@@ -110,6 +110,13 @@ starting the passes. It holds the Pass 6 procedure, adjustments to Passes 1–4
 that apply only to abstracts (for example, which passive constructions to leave
 alone), and the output format for abstracts.
 
+**Sections have a reference file too.** In **full-review** and
+**section-review** mode, read
+[references/section-guidance.md](references/section-guidance.md) and apply the
+part for each section under review (Introduction, Methods, Results,
+Discussion). It says what each section must do, and its findings are reported
+under Pass 3.
+
 ### Pass 1: Clutter Extraction
 
 Strip every sentence to its cleanest components. Flag and replace:
@@ -210,7 +217,9 @@ passive obscures accountability or the actor.
 
 ### Pass 3: Sentence and Paragraph Architecture
 
-This pass checks how sentences are built and how they join into paragraphs.
+This pass checks how sentences are built and how they join into paragraphs. In
+full and section reviews it also checks each section against
+[references/section-guidance.md](references/section-guidance.md).
 
 **Buried predicate audit:** Count words between subject and main verb. If more
 than ~12 words intervene, the predicate is buried. Recommend restructuring.

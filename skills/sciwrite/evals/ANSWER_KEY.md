@@ -104,3 +104,19 @@ cites Figure 6 only for the recirculation, and states the drop as a number.
 Decoys: "large-eddy simulation" and "velocity deficit" are field vocabulary;
 "Here we simulate…" is a good closing sentence; the citations must stay intact.
 The passive "was resolved" disappears when the dangling modifier is fixed.
+
+## Test 9: `files/micromixer.md` (section review, Results and Discussion)
+
+| # | Location | Planted problem | Pass | Expected severity |
+|---|----------|-----------------|------|-------------------|
+| 1 | Results, sentence 1 | Leads with "Figure 3 shows…" instead of the finding | 3 Section | MINOR or MAJOR |
+| 2 | Results, sentence 3 | "This is because…" explains the mechanism: interpretation in Results | 3 Section | MINOR |
+| 3 | Results, sentence 3 | Vague "This" | 3 Sentence | MINOR |
+| 4 | Discussion, sentence 1 | Opens with methods, not the main finding | 3 Section | MAJOR |
+| 5 | Discussion, sentence 2 | Repeats all six numbers from the Results | 3 Section | MAJOR or MINOR |
+| 6 | Discussion, last sentence | "prove … optimal … all applications" claims more than the results show | Content note | (untagged or flagged; not rewritten silently) |
+| 7 | Discussion | No limitations (e.g., the Reynolds-number range, the trade-off with pressure drop) | 3 Section | MAJOR |
+
+Decoys: past tense in Results is correct; the comparison with Stroock et al.
+is present and should stay; the pressure-drop ordering in the Results matches
+the numbers.
