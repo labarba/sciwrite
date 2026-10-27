@@ -1,0 +1,135 @@
+{
+  "skill_name": "sciwrite",
+  "evals": [
+    {
+      "id": 1,
+      "name": "sainani-1.4-cancer-biology",
+      "group": "source-fidelity",
+      "source": "Kristin Sainani, Writing in the Sciences, lecture 1.4 (Stanford, CC BY). Original and revision transcribed from the lecture; punctuation normalized.",
+      "notes": "Taken from the course the skill was distilled from, and SKILL.md contains some of these edits ('successful solutions'). Measures fidelity to the method, not generalization to new text.",
+      "prompt": "Can you tighten up this sentence from the introduction of my review paper? \"This paper provides a review of the basic tenets of cancer biology study design, using as examples, studies that illustrate the methodologic challenges, or that demonstrate successful solutions to the difficulties inherent in biological research.\"",
+      "expected_output": "A revision close to Sainani's: \"This paper reviews cancer biology study design using examples that illustrate specific challenges and solutions.\" Each cut is explained.",
+      "files": [],
+      "assertions": [
+        "Replaces \"provides a review of\" with the verb \"reviews\", identifying it as a nominalization paired with a weak verb",
+        "Removes \"the basic tenets of\" as vague words that add nothing",
+        "Removes the repetition of \"examples\" and \"studies\" (e.g., \"using examples that illustrate\")",
+        "Removes \"methodologic\", because \"study design\" already implies methodology",
+        "Removes \"or that demonstrate\" as a synonym repeating \"illustrate\"",
+        "Removes \"successful\" from \"successful solutions\", because success is inherent in a solution",
+        "Removes \"difficulties\" as a repetition of \"challenges\"",
+        "Removes \"inherent in biological research\", because \"cancer biology study design\" already sets that context",
+        "The revised sentence keeps the original meaning and adds no new claims"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "sainani-1.4-athletic-activity",
+      "group": "source-fidelity",
+      "source": "Kristin Sainani, Writing in the Sciences, lecture 1.4 (Stanford, CC BY). Original and revisions transcribed from the lecture; punctuation normalized.",
+      "notes": "Sainani gives two revisions: the associational one, and a more direct causal one that she says requires stronger causal evidence. The skill must not change a claim from association to causation on its own; that is a content decision for the author. SKILL.md contains the 'As it is well known' rule.",
+      "prompt": "Please clean up the writing in this opening sentence of my paper: \"As it is well known, increased athletic activity has been related to a profile of lower cardiovascular risk, lower blood pressure levels, and improved muscular and cardio-respiratory performance.\"",
+      "expected_output": "A revision close to Sainani's: \"Increased athletic activity is associated with lower cardiovascular risk, lower blood pressure, and improved fitness.\" The causal version (\"Increased athletic activity lowers cardiovascular risk and blood pressure, and improves fitness\") may be offered only as an option, with a note that it claims causation and needs causal evidence.",
+      "files": [],
+      "assertions": [
+        "Deletes \"As it is well known\" as introductory dead weight",
+        "Suggests a citation at the end of the sentence in place of saying the point is well known",
+        "Replaces \"has been related to\" with an associational verb such as \"is associated with\"",
+        "Does not change the claim to causal language (e.g., \"lowers\", \"improves\") unless it states that this requires causal evidence and leaves the choice to the author",
+        "Removes \"a profile of\" as an empty phrase",
+        "Removes \"levels\" from \"blood pressure levels\"",
+        "Condenses \"improved muscular and cardio-respiratory performance\" to \"improved fitness\" or an equally short term"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "cavity-latex-full-review",
+      "group": "planted-errors",
+      "source": "Written for this test set. Answer key in evals/ANSWER_KEY.md.",
+      "prompt": "I'm about to submit a paper to the Journal of Fluid Mechanics. Can you review the writing in the Methods and Results sections in evals/files/cavity.tex?",
+      "expected_output": "A full writing review report covering all passes. It catches the two number inconsistencies as CRITICAL, the renamed mesh and the undefined acronym, the buried predicate, and the clutter and nominalization, and leaves all LaTeX math and citation commands untouched.",
+      "files": ["evals/files/cavity.tex"],
+      "assertions": [
+        "Flags as CRITICAL that the fine mesh is 256 × 256 in Methods but 512 × 512 in Results",
+        "Flags as CRITICAL that the text reports a maximum deviation of 2.1% while Table 1 shows 2.4% for the 256 × 256 mesh",
+        "Flags \"high-resolution grid\" as a different name for the defined term \"fine mesh\"",
+        "Flags \"SGS\" as an acronym that is never defined",
+        "Flags the grid convergence sentence as a buried predicate (subject \"A grid convergence study\" separated from \"was performed\" by about 30 words) and proposes a restructured sentence",
+        "Replaces \"In order to\" with \"To\" and \"Due to the fact that\" with \"Because\"",
+        "Deletes \"It is worth noting that\"",
+        "Replaces \"We performed an analysis of\" with \"We analyzed\"",
+        "Does not propose any change inside the equation environment or inline math",
+        "Keeps every \\cite, \\citet, \\ref, \\eqref and \\label command intact in the proposed revisions"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "arterial-stiffness-full-review",
+      "group": "planted-errors",
+      "source": "Written for this test set. Answer key in evals/ANSWER_KEY.md. Reference [12] is fictitious.",
+      "prompt": "Here's my short report for a cardiology journal (evals/files/arterial-stiffness.md). Please do a full writing review before I send it to my coauthors.",
+      "expected_output": "A full writing review report that catches the sample-size mismatch and the wrong percentage as CRITICAL, the renamed group, the acronym undefined in the Abstract and the prevalence statistic cited only to a review, without flagging the acceptable passive in Methods.",
+      "files": ["evals/files/arterial-stiffness.md"],
+      "assertions": [
+        "Flags as CRITICAL that the Abstract reports 96 adults while Methods reports 92 (48 + 44)",
+        "Flags as CRITICAL that 45 of 48 is 94%, not the 92% reported in Results",
+        "Does not flag 39 of 44 (89%) as an error",
+        "Flags \"heavier participants\" in Results as a different name for the defined \"obese group\"",
+        "Flags that PWV is used in the Abstract without being defined there",
+        "Flags the 15–62% prevalence statistic as cited only to a review and recommends checking the primary sources",
+        "Does not tag \"Blood samples were collected after an overnight fast\" as CRITICAL or MAJOR"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "abstract-missing-result",
+      "group": "planted-errors",
+      "source": "Written for this test set. Answer key in evals/ANSWER_KEY.md.",
+      "prompt": "Can you review my abstract? \"Microchannel heat sinks are widely used to cool high-power electronics. In this paper we present a numerical study of flow boiling in microchannel heat sinks with pin-fin arrays. Flow boiling can remove heat fluxes above 1 kW/cm², but it is prone to flow instabilities that cause large temperature oscillations. This study investigates the effect of pin-fin pitch, inlet subcooling, and mass flux (200–1200 kg/m²s) on two-phase instabilities, using a volume-of-fluid (VOF) method with a phase-change model on a mesh of 4.2 million cells. Simulations were carried out for 36 configurations. The results are discussed in terms of their implications for heat sink design.\"",
+      "expected_output": "An abstract review that states the default parameters it is using, shows each sentence tagged with its move, reports the missing result statement as CRITICAL, and flags the throat-clearing openers and the non-essential numbers, without inventing a result.",
+      "files": [],
+      "assertions": [
+        "States which venue rules or default parameters it is applying, because no journal was named",
+        "Shows the abstract with each sentence labeled by its rhetorical move",
+        "Reports the missing main-result statement as CRITICAL",
+        "Flags \"In this paper we present\" and \"This study investigates\" as openers that announce the paper instead of stating findings",
+        "Flags the mesh size (4.2 million cells) and the number of configurations (36) as numbers that do not belong in the abstract",
+        "Notes that \"The results are discussed in terms of their implications\" says nothing about what the results are",
+        "Does not invent a finding: any suggested result sentence uses a placeholder or asks the author for the result"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "targeted-passive-voice",
+      "group": "planted-errors",
+      "source": "Written for this test set. Answer key in evals/ANSWER_KEY.md.",
+      "prompt": "Just check this Discussion paragraph for passive voice and smothered verbs, nothing else: \"It was found that the hardness of the annealed specimens decreased as the annealing temperature increased (Figure 3). We attribute this decrease to recrystallization, which the electron backscatter diffraction (EBSD) maps in Figure 4 confirm. A comparison of our hardness values with those reported in earlier studies was made, and it was concluded that grain growth dominates the softening above 600 °C. The specimens were annealed in flowing argon in order to prevent oxidation, so surface oxides cannot explain the softening. Performing a quantification of grain size from the EBSD maps would make this conclusion stronger, and we plan to do this in future work.\"",
+      "expected_output": "Only Pass 2 findings: the three passives that hide the authors and the two nominalizations, with active revisions. The justified passive about annealing and the field term \"recrystallization\" are left alone, and the clutter phrase \"in order to\" is not reported.",
+      "files": [],
+      "assertions": [
+        "Revises \"It was found that\" to an active construction with the authors as the actor (e.g., \"We found that\")",
+        "Revises \"A comparison ... was made\" to \"We compared ...\"",
+        "Revises \"it was concluded that\" to \"we concluded that\" or removes it",
+        "Revises \"Performing a quantification of grain size\" to \"Quantifying grain size\"",
+        "Does not flag \"recrystallization\" as a smothered verb",
+        "Does not require \"The specimens were annealed in flowing argon\" to be made active",
+        "Reports no findings outside voice and verbs (for example, does not report \"in order to\" as clutter)"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "clean-control",
+      "group": "control",
+      "source": "Written for this test set to contain no planted errors. The numbers are consistent: 2.3 / 4.1^(1/3) = 1.44.",
+      "prompt": "Please review the writing in this Results paragraph: \"We measured the Nusselt number on the heated wall for Reynolds numbers (Re) from 5,000 to 30,000. In every configuration, the Nusselt number increased with Re, and the ribbed channel transferred more heat than the smooth channel (Figure 5). At Re = 20,000 and a rib pitch of ten rib heights, the ribs raised the Nusselt number by a factor of 2.3 and the friction factor by a factor of 4.1. The thermal performance factor, which weighs this gain in heat transfer against the added pressure loss, was therefore 1.4, the highest of the three pitches we tested. At the closest pitch, fluid recirculated in the gaps between ribs and heat transfer fell, as the flow visualizations in Figure 6 show.\"",
+      "expected_output": "A short review that says the paragraph is already clear, reports no CRITICAL or MAJOR findings, and offers at most a few optional MINOR suggestions.",
+      "files": [],
+      "assertions": [
+        "Reports no CRITICAL or MAJOR findings",
+        "Does not claim a numerical inconsistency (the performance factor of 1.4 is consistent with 2.3 and 4.1)",
+        "Reports at most three MINOR findings in total",
+        "Says explicitly that the paragraph is already clear or needs little change"
+      ]
+    }
+  ]
+}

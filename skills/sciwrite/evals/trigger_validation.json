@@ -1,0 +1,42 @@
+[
+  {
+    "query": "Here's the discussion from our conference paper draft. It feels bloated and repetitive. what would you change?",
+    "should_trigger": true,
+    "note": "Conference paper, described need"
+  },
+  {
+    "query": "Walk me through improving the first three paragraphs of my paper one at a time, I want to learn to do this myself",
+    "should_trigger": true,
+    "note": "Interactive mode"
+  },
+  {
+    "query": "Does my summary paragraph state the main finding clearly? I'm worried a non-specialist editor won't get it.",
+    "should_trigger": true,
+    "note": "Abstract-review mode without the word 'abstract'"
+  },
+  {
+    "query": "I wrote up the results of our wind tunnel campaign in results.tex — can you check the numbers in the text match Tables 2 and 3, and that I define every acronym?",
+    "should_trigger": true,
+    "note": "Numbers and acronym passes, engineering context"
+  },
+  {
+    "query": "Draft a response-to-reviewers letter addressing the three main criticisms in reviews.pdf.",
+    "should_trigger": false,
+    "note": "Near miss: revision workflow, but writes a new letter"
+  },
+  {
+    "query": "Translate the abstract and introduction of my paper from Spanish into English.",
+    "should_trigger": false,
+    "note": "Near miss: translation, not review"
+  },
+  {
+    "query": "Summarize this paper on turbulent boundary layers for my journal club tomorrow.",
+    "should_trigger": false,
+    "note": "Near miss: reading someone else's paper"
+  },
+  {
+    "query": "Fix the LaTeX errors in main.tex — it won't compile, something about a missing $ in the table.",
+    "should_trigger": false,
+    "note": "Near miss: manuscript file, but a build problem"
+  }
+]
