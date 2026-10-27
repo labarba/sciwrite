@@ -1,9 +1,10 @@
 # Changelog
 
 All notable changes to the SciWrite skill are recorded here.
-Versions follow [Semantic Versioning](https://semver.org/).
+Versions follow [Semantic Versioning](https://semver.org/). While the version
+is 0.x, any release may include breaking changes.
 
-## [Unreleased] — 2.0.0
+## [Unreleased] — 0.2.0
 
 ### Changed
 - Renamed the skill from `manuscript-writing-review` to `sciwrite`, so the
@@ -26,6 +27,6 @@ Versions follow [Semantic Versioning](https://semver.org/).
   attaches a ready-to-upload zip to each tagged release.
 - `CITATION.cff`.
 
-## 1.0.0 — 2026-04-04
+## 0.1.0 — 2026-08-03
 
-- First public version: five audit passes, four review modes.
+- First tagged release, an early draft: five audit passes, four review modes.
