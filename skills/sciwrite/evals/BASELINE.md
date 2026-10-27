@@ -42,7 +42,8 @@ promise text or files the run did not have.
 ## Known flaws in the tests (follow-ups)
 
 These are flaws in the tests, not in the skill. Fix them before relying on
-comparisons with later iterations.
+comparisons with later iterations. Items 1–3 were fixed in PR 4, and test 3
+gained two assertions on locations and content notes.
 
 1. **Test 7 is not a clean control.** Both reviews rightly flagged "as the flow
    visualizations in Figure 6 show" (a visualization cannot show a drop in heat

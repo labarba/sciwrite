@@ -80,3 +80,10 @@ defined at first use, the terms "ribbed channel", "smooth channel", "rib
 pitch" and "Nusselt number" are used consistently, and every sentence has its
 subject next to its verb. A good review reports no CRITICAL or MAJOR
 findings and at most a few optional MINOR suggestions.
+
+Revised in PR 4. The first version had three real problems that both baseline
+reviews caught: "as the flow visualizations in Figure 6 show" credited a
+visualization with showing a drop in heat transfer; "closest pitch" misused
+"close" for a distance and never gave the value; and "the highest of the three
+pitches" read as if 1.4 were a pitch. The revision names all three pitches,
+cites Figure 6 only for the recirculation, and states the drop as a number.

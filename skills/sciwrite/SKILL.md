@@ -140,7 +140,9 @@ Example:
 | Performs an analysis of | Analyzes |
 | Achieves a reduction in | Reduces |
 
-Flag every "noun + of" construction and check whether a direct verb exists.
+Check "noun + of" constructions for a hidden verb. Flag one only when the verb
+form is shorter and clearer; leave established technical terms alone, even when
+they end in "-tion" (for example, "polymerization", "recrystallization").
 
 **When passive voice is acceptable:**
 - The actor is genuinely unknown or irrelevant ("The sample was collected in 2019")
@@ -167,9 +169,10 @@ than ~12 words intervene, the predicate is buried. Recommend restructuring.
 - Use **semicolons** to link closely related independent clauses, reducing the
   need for transition words
 
-**Sentence length variation:** Flag paragraphs where all sentences are roughly
-the same length (±5 words). Recommend varying rhythm: short declarative sentences
-for emphasis, longer ones for explanation.
+**Sentence length variation:** Flag a paragraph only when uniform sentence length
+makes it read as monotonous, for example four or more consecutive sentences of
+nearly the same length and shape. Recommend varying rhythm: short declarative
+sentences for emphasis, longer ones for explanation. This is a MINOR finding.
 
 ### Pass 4: Keyword Consistency and Terminology
 
@@ -193,9 +196,13 @@ two things are being described or one.
 
 **Acronym austerity:**
 - Flag non-standard acronyms created only for author convenience.
-- Permit only universally recognized acronyms (DNA, RNA, CFD, FEM, PIV, etc.).
+- Permit acronyms that the target readers know without a definition. That set
+  depends on the field: DNA and RNA for nearly everyone; CFD, FEM or PIV in an
+  engineering journal, but not in a general-science one.
 - Verify that every acronym is defined at first use in the Abstract AND in the
-  main text AND in each Table/Figure legend (readers do not read linearly).
+  main text (readers do not read linearly). Many journals also require each
+  Table and Figure legend to stand alone; check legends when the journal is
+  unknown or requires it, and report undefined acronyms there as MINOR.
 
 ### Pass 5: Numerical Consistency and Citation Integrity
 
@@ -243,8 +250,7 @@ Produce a structured report with this skeleton:
 [2–3 sentence overall assessment: dominant issues, overall clarity level]
 
 ### Pass 1: Clutter — [N issues found]
-[List each instance with line/paragraph reference, original text, suggested revision,
-and brief rationale]
+[Findings, grouped and formatted as described under "Reporting findings" below]
 
 ### Pass 2: Voice and Verbs — [N issues found]
 [Same format]
@@ -265,8 +271,69 @@ and brief rationale]
 abbreviations, each with original text, suggested revision, rationale, severity]
 [Accessibility notes — advisory, untagged]
 
+### Minor edits
+[All MINOR findings as a compact list: location, original → revision. No rationale.]
+
+### Content notes
+[Optional, untagged, at most three: questions about substance that a writing
+review can raise but not settle]
+
 ### Top 5 Priority Revisions
 [The five changes that would most improve the manuscript, ranked by impact]
+```
+
+Leave out a pass heading when that pass found nothing worth reporting, and say
+so in one line under Summary ("No clutter or terminology problems found").
+
+### Reporting findings
+
+A review is useful only if the author can act on it. Ten findings that matter
+are worth more than forty that include every defensible nitpick, because the
+nitpicks bury the problems that mislead readers. Apply these rules to every
+mode:
+
+- **Group repeated problems.** When the same kind of problem recurs (the same
+  clutter phrase, the same passive pattern, the same renamed term), report it
+  once: give the count, show the two or three clearest instances with
+  revisions, and list the remaining locations.
+- **Show CRITICAL and MAJOR findings in full.** Each gets the location, the
+  original text quoted exactly, a concrete revision, and one sentence on why.
+- **Collapse MINOR findings into the "Minor edits" list.** One line each:
+  location, original → revision.
+- **Give every finding a location.** For a file, give line numbers (and the
+  section). For pasted text, give the paragraph number and its first few words,
+  for example ¶2, "At Re = 20,000…".
+- **Keep content out of the severity scale.** Suggestions about substance (add a
+  benchmark value, report an uncertainty, cite a different source) go under
+  "Content notes", never as CRITICAL, MAJOR or MINOR writing findings. The
+  exceptions are internal contradictions that Pass 5 catches, such as a number
+  that disagrees with a table.
+- **Report only what a careful human editor would mark.** If a sentence is
+  clear and correct, leave it alone even when a rule could be stretched to
+  cover it. When unsure whether something is a problem, leave it out.
+
+Example of a finding shown in full:
+
+```
+**[MAJOR] Buried predicate** (Results, lines 41–43)
+- Original: "The classifier, which was trained on 1,200 labeled images collected
+  at three hospitals over two years under the protocol in Section 2, reached
+  94% accuracy on the test set."
+- Revision: "The classifier reached 94% accuracy on the test set. We trained it
+  on 1,200 labeled images collected at three hospitals over two years
+  (Section 2)."
+- Why: 22 words separate "The classifier" from "reached", so the reader holds
+  the subject until the end of the sentence.
+```
+
+Example of a grouped finding:
+
+```
+**[MAJOR] Passive voice hides the authors** (3 instances)
+- Line 12: "It was observed that the jet spreads faster" → "We observed that the jet spreads faster"
+- Line 15: "Drag measurements were taken" → "We measured drag"
+- Also: line 22.
+- Why: the reader cannot tell which results are the authors' own.
 ```
 
 ### For interactive mode
