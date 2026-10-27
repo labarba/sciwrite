@@ -7,6 +7,18 @@ is 0.x, any release may include breaking changes.
 ## [Unreleased] — 0.2.0
 
 ### Changed
+- Less noisy reports. Repeated problems are grouped into one finding with a
+  count; MINOR findings collapse into a one-line "Minor edits" list; every
+  finding gives a location; suggestions about content go under "Content notes"
+  instead of the severity scale; passes with nothing to report are left out.
+  Added an example of a full finding and a grouped one.
+- Field-dependent rules softened: "noun + of" constructions are flagged only
+  when the verb is shorter and clearer, and established technical terms are
+  left alone; acceptable acronyms depend on the readership; undefined
+  acronyms in legends are MINOR; the sentence-length check needs four or more
+  similar sentences.
+- Fixed three test flaws found in the baseline: rewrote the control
+  paragraph (test 7) and loosened two over-narrow assertions (tests 3 and 6).
 - Moved everything specific to abstracts into
   `references/summary-paragraph.md`: the Pass 6 procedure, the
   abstract-only adjustments to Passes 1–4, the move-tagged example, and the
