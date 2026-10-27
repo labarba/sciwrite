@@ -7,6 +7,11 @@ is 0.x, any release may include breaking changes.
 ## [Unreleased] — 0.2.0
 
 ### Changed
+- Resolved three contradictions in the instructions. `abstract-review` runs
+  Pass 6 together with Passes 1, 2, and 4 (it no longer also says "alone").
+  When no journal is named, the skill reviews against default conventions and
+  says so instead of stopping to ask. The figure-versus-table check runs only
+  when the figures are visible.
 - Renamed the skill from `manuscript-writing-review` to `sciwrite`, so the
   `name` field matches its folder as the Agent Skills spec requires.
   Existing installs under the old name must be removed and reinstalled.
