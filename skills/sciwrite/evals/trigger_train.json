@@ -10,9 +10,9 @@
     "note": "Writing fix buried inside a revision workflow"
   },
   {
-    "query": "is my abstract too long for Nature? it's 260 words, pasting it below",
+    "query": "is my abstract too long for Nature? it's 260 words:\n\nTurbulent channel flows over riblets are a classic test case for passive drag reduction. Riblets aligned with the flow reduce skin friction by up to 8% in laboratory experiments, but how this reduction scales with Reynolds number remains debated, because most data come from friction Reynolds numbers below 1000. In this paper we present direct numerical simulations of channel flow over trapezoidal riblets at friction Reynolds numbers of 180, 550 and 1000, on grids of up to 2.1 billion points. Simulations were run on 4096 GPUs for a total of 3.2 million GPU hours. We find that drag reduction decreases from 7.2% to 5.1% across this range, and that the decrease follows the log-law shift predicted by García-Mayoral and Jiménez. These results suggest that riblets remain useful at flight Reynolds numbers, but with smaller benefits than laboratory data imply.",
     "should_trigger": true,
-    "note": "Abstract-review mode, casual"
+    "note": "Abstract-review mode, casual; abstract now included (fixed in PR 8)"
   },
   {
     "query": "Check whether I use the same names for my experimental groups throughout the Results and Discussion of draft_v4.docx — I think I switch between 'control cohort' and 'baseline group'.",
@@ -58,5 +58,25 @@
     "query": "Can you make this email to my collaborator clearer? I'm asking whether she can share the PIV data from last summer's experiments.",
     "should_trigger": false,
     "note": "Near miss: clarity editing, but not a manuscript"
+  },
+  {
+    "query": "can u make this sentence less clunky? \"The determination of the optimal operating conditions was performed by means of a parametric study of the inlet temperature and flow rate.\"",
+    "should_trigger": true,
+    "note": "Single pasted sentence, casual"
+  },
+  {
+    "query": "Check this paragraph from my Methods for passive voice only: \"The samples were polished and etched. Hardness was measured with a Vickers indenter. It was observed that the indentation size depended on the load.\"",
+    "should_trigger": true,
+    "note": "Single pass on a short pasted excerpt"
+  },
+  {
+    "query": "Is this sentence grammatically correct? \"Each of the samples were tested twice.\"",
+    "should_trigger": false,
+    "note": "Near miss: a grammar question about one sentence, not a writing review"
+  },
+  {
+    "query": "Turn this paragraph from my paper into a three-tweet thread for a general audience.",
+    "should_trigger": false,
+    "note": "Near miss: rewriting for social media, not reviewing the manuscript"
   }
 ]

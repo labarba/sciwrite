@@ -7,6 +7,16 @@ is 0.x, any release may include breaking changes.
 ## [Unreleased] — 0.2.0
 
 ### Changed
+- Rewrote the description around what users ask for rather than a list of
+  trigger phrases: it now covers requests of any length, down to a single
+  pasted sentence, and names abstracts explicitly. On the trigger queries,
+  the skill now loads for 16/16 training and 10/10 validation queries
+  (before: 14/16 and 8/10), with no false triggers in either set.
+- Trimmed `SKILL.md` from 500 to 477 lines by moving the Pass 6 severity
+  rules, the Pass 6 report contents, and abstract-only caveats into
+  `references/summary-paragraph.md`.
+- Trigger queries: completed three that promised text the run never had, and
+  added short pasted excerpts (and near misses) to both sets.
 - Section-specific guidance in `references/section-guidance.md`, read in full
   and section reviews: what the Introduction, Methods, Results and Discussion
   must each do (the Introduction's funnel to a stated gap; Results that lead
