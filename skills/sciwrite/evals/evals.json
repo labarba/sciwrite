@@ -137,6 +137,29 @@
         "Reports at most three MINOR findings in total",
         "Says explicitly that the paragraph is already clear or needs little change"
       ]
+    },
+    {
+      "id": 8,
+      "name": "wind-farm-paragraphs",
+      "group": "planted-errors",
+      "source": "Written for this test set. Answer key in evals/ANSWER_KEY.md. References [3]-[7] are fictitious.",
+      "prompt": "Can you review the writing in the first two paragraphs of my Introduction (evals/files/wind-farm-intro.md)? I'm worried they don't flow.",
+      "expected_output": "A section review that catches the paragraph-level problems (off-topic sentence, missing topic sentence, a 'However' with no contrast) and the sentence-level ones (dangling modifier, overloaded sentence, vague 'This', empty opener, negative construction), without treating field vocabulary as jargon or touching the citations.",
+      "files": [
+        "evals/files/wind-farm-intro.md"
+      ],
+      "assertions": [
+        "Flags \"Using large-eddy simulation, the wake of a single turbine was resolved\" as a dangling modifier and revises it so the authors are the ones using the simulation (e.g., \"Using large-eddy simulation, we resolved\")",
+        "Flags the first sentence of paragraph 2 as overloaded (several ideas strung together) and splits it into shorter sentences",
+        "Replaces \"There are several studies that have shown that\" with \"Several studies have shown that\" or equivalent",
+        "Flags \"However\" in paragraph 1 as introducing a contrast that isn't there (the sentence adds a second cost of wakes)",
+        "Flags the sentence about offshore sites and installation costs as off-topic for paragraph 1",
+        "Notes that paragraph 1 lacks a topic sentence stating its main point (wakes reduce downstream power and raise loads), or proposes one",
+        "Flags \"This motivates\" as a vague \"this\" and adds a noun (e.g., \"This limitation motivates\")",
+        "Rewrites \"was not considered important\" as a positive construction (e.g., \"was overlooked\" or \"was ignored\")",
+        "Does not treat \"large-eddy simulation\" or \"velocity deficit\" as jargon to cut",
+        "Keeps the citations [3, 4], [5], [6] and [7] intact in revisions"
+      ]
     }
   ]
 }

@@ -87,3 +87,20 @@ visualization with showing a drop in heat transfer; "closest pitch" misused
 "close" for a distance and never gave the value; and "the highest of the three
 pitches" read as if 1.4 were a pitch. The revision names all three pitches,
 cites Figure 6 only for the recirculation, and states the drop as a number.
+
+## Test 8: `files/wind-farm-intro.md` (section review, two Introduction paragraphs)
+
+| # | Location | Planted problem | Pass | Expected severity |
+|---|----------|-----------------|------|-------------------|
+| 1 | ¶1, sentence 1 | Opens with rows and land use; the paragraph is about wake costs, so there is no real topic sentence | 3 Paragraph | MAJOR |
+| 2 | ¶1, sentence 2 | "There are several studies that have shown that" → "Several studies have shown that" | 1 Clutter | MINOR |
+| 3 | ¶1, sentence 3 | "However" introduces a second cost of wakes, not a contrast | 3 Paragraph | MINOR or MAJOR |
+| 4 | ¶1, sentence 4 | Offshore winds and installation costs are off-topic | 3 Paragraph | MAJOR |
+| 5 | ¶1, sentence 5 | "was not considered important" → "was overlooked" | 1 Clutter | MINOR |
+| 6 | ¶2, sentence 1 | Dangling modifier: "Using large-eddy simulation, the wake … was resolved" | 3 Sentence | MAJOR |
+| 7 | ¶2, sentence 1 | Overloaded sentence: about 70 words and five ideas joined by "and", "but", "whereas", "which" | 3 Sentence | MAJOR |
+| 8 | ¶2, sentence 2 | Vague "This motivates" | 3 Sentence | MINOR |
+
+Decoys: "large-eddy simulation" and "velocity deficit" are field vocabulary;
+"Here we simulate…" is a good closing sentence; the citations must stay intact.
+The passive "was resolved" disappears when the dangling modifier is fixed.

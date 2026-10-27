@@ -6,7 +6,7 @@ These files test the skill. They are left out of the release zip.
 |------|---------------|
 | `evals.json` | Output tests: a prompt, the expected result, and checkable assertions for each case |
 | `ANSWER_KEY.md` | Every planted problem in the invented passages, with location, pass, and expected severity |
-| `files/` | Input files for tests 3 and 4 |
+| `files/` | Input files for tests 3, 4 and 8 |
 | `trigger_train.json` | 12 queries (6 should trigger, 6 should not) used to improve the description |
 | `trigger_validation.json` | 8 queries (4 and 4) held out to check that a new description generalizes |
 
@@ -16,7 +16,7 @@ These files test the skill. They are left out of the release zip.
   Sainani's *Writing in the Sciences* (CC BY), scored against her own edits. The
   skill was built from this course, so these measure fidelity to the method, not
   performance on new text.
-- **Tests 3–6 (planted errors):** invented passages with known problems; see
+- **Tests 3–6 and 8 (planted errors):** invented passages with known problems; see
   `ANSWER_KEY.md`. They also contain decoys that should not be flagged.
 - **Test 7 (control):** a clean paragraph that measures false alarms.
 

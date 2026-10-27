@@ -151,6 +151,23 @@ already carried by the noun or verb. Examples:
 - "unexpected surprise" → "surprise"
 - "currently underway" → "underway"
 
+**Empty openers:** "There is/are … that" and "It is … that" postpone the real
+subject. Start with it instead:
+
+- "There are several studies that have shown" → "Several studies have shown"
+- "It is the shear layer that controls mixing" → "The shear layer controls mixing"
+
+**Negative constructions:** a positive statement is shorter and easier to
+follow. Convert "not" + adjective or verb when a single word says the same thing,
+without changing the meaning:
+
+- "did not consider" → "ignored" or "overlooked"
+- "not important" → "unimportant" or "minor"
+- "not the same" → "different"
+
+Keep "not" when the negation is the point ("the difference was not
+significant") or when the positive word would overstate the claim.
+
 ### Pass 2: Active Voice and Verb Vitality
 
 Scientific transparency requires accountability. Identify who did what.
@@ -191,7 +208,9 @@ they end in "-tion" (for example, "polymerization", "recrystallization").
 Do NOT mechanically convert every passive sentence. Flag the ones where the
 passive obscures accountability or the actor.
 
-### Pass 3: Sentence Architecture
+### Pass 3: Sentence and Paragraph Architecture
+
+This pass checks how sentences are built and how they join into paragraphs.
 
 **Buried predicate audit:** Count words between subject and main verb. If more
 than ~12 words intervene, the predicate is buried. Recommend restructuring.
@@ -212,6 +231,40 @@ than ~12 words intervene, the predicate is buried. Recommend restructuring.
 makes it read as monotonous, for example four or more consecutive sentences of
 nearly the same length and shape. Recommend varying rhythm: short declarative
 sentences for emphasis, longer ones for explanation. This is a MINOR finding.
+
+**Overloaded sentences:** flag a sentence that strings together three or more
+independent ideas with "and", "but", "whereas" or "which", so the reader loses
+track of the main point. Split it, one idea per sentence. MAJOR when the main
+point is hard to find, MINOR otherwise.
+
+**Dangling and misplaced modifiers:** an opening phrase attaches to the subject
+that follows it. "Using a finite-volume method, the flow was solved" says the
+flow used the method. Rewrite so the phrase sits next to what it describes:
+"Using a finite-volume method, we solved the flow." MAJOR when the misreading
+changes who did what, MINOR otherwise.
+
+**Vague "this":** a sentence that opens with "This" or "These" and no noun
+("This shows…", "This motivates…") makes the reader search for the referent.
+Add the noun: "This limitation motivates…". MINOR.
+
+**Paragraph structure:** read each paragraph as a unit, after checking its
+sentences.
+
+- **One main idea.** Flag a sentence that belongs to a different topic, and say
+  where it fits better. MAJOR.
+- **Topic sentence.** In the Introduction and Discussion, the first sentence
+  should tell the reader what the paragraph is about. If it doesn't, propose
+  one built from the paragraph's own content. Methods paragraphs that follow a
+  procedure step by step don't need one. MAJOR when the paragraph's point is
+  unclear, MINOR otherwise.
+- **Logical flow.** Each sentence should connect to the one before, usually by
+  repeating a key term or by a transition. Flag a sentence that jumps to new
+  material without a link.
+- **Transitions that fit the logic.** "However" and "In contrast" must
+  introduce a contrast; "Therefore" a consequence; "Moreover" an addition.
+  Flag a transition whose logic doesn't match, and cut transitions that add
+  nothing when the connection is already clear. MINOR, or MAJOR when the wrong
+  transition reverses the meaning.
 
 ### Pass 4: Keyword Consistency and Terminology
 
@@ -294,7 +347,7 @@ Produce a structured report with this skeleton:
 ### Pass 2: Voice and Verbs — [N issues found]
 [Same format]
 
-### Pass 3: Sentence Architecture — [N issues found]
+### Pass 3: Sentence and Paragraph Architecture — [N issues found]
 [Same format]
 
 ### Pass 4: Terminology — [N issues found]
