@@ -16,7 +16,7 @@ description: >
 license: CC-BY-4.0
 metadata:
   author: Lorena A. Barba
-  version: "0.2.0-dev"
+  version: "1.0.0"
   source: Kristin Sainani, Writing in the Sciences (Stanford, CC-BY lectures)
   repository: https://github.com/labarba/sciwrite
 ---

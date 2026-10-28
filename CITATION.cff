@@ -6,7 +6,8 @@ authors:
   - family-names: Barba
     given-names: Lorena A.
     affiliation: The George Washington University
-version: 0.2.0-dev
+version: 1.0.0
+date-released: 2026-10-27
 license: CC-BY-4.0
 repository-code: "https://github.com/labarba/sciwrite"
 keywords:

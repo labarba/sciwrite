@@ -1,10 +1,14 @@
 # Changelog
 
 All notable changes to the SciWrite skill are recorded here.
-Versions follow [Semantic Versioning](https://semver.org/). While the version
-is 0.x, any release may include breaking changes.
+Versions follow [Semantic Versioning](https://semver.org/). Releases before
+1.0.0 could include breaking changes; from 1.0.0 on, breaking changes (renaming
+the skill, moving its files, removing a review mode) bump the major version.
 
-## [Unreleased] — 0.2.0
+## 1.0.0 — 2026-10-27
+
+First stable release. The skill's name, file layout, review modes and install
+channels are now the public interface.
 
 ### Changed
 - README rewritten with install steps checked in October 2026 for Claude
@@ -15,7 +19,7 @@ is 0.x, any release may include breaking changes.
   all three skill files. The description of the passes matches the current
   skill.
 - Moved "How This Skill Was Made" from the README to `HISTORY.md`, with a new
-  section on the version 0.2 revision. Fixed the broken Comet link.
+  section on the version 1.0 revision. Fixed the broken Comet link.
 - Rewrote the description around what users ask for rather than a list of
   trigger phrases: it now covers requests of any length, down to a single
   pasted sentence, and names abstracts explicitly. On the trigger queries,
