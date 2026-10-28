@@ -1,5 +1,7 @@
 # SciWrite — Manuscript Writing Review
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23728600.svg)](https://doi.org/10.5281/zenodo.23728600)
+
 An [Agent Skill](https://agentskills.io) that reviews scientific and engineering manuscripts for writing quality, applying the methodology from Dr. Kristin Sainani's [*Writing in the Sciences*](https://www.coursera.org/learn/sciwrite) course at Stanford.
 
 ## What this skill does
@@ -159,6 +161,8 @@ If you find an edge case the skill handles poorly—a field-specific convention 
 ## How to cite
 
 If you use this skill in your work or teaching, please cite it using the information in [CITATION.cff](CITATION.cff) (GitHub's **Cite this repository** button formats it for you).
+
+The software is archived on Zenodo. The DOI [10.5281/zenodo.23728600](https://doi.org/10.5281/zenodo.23728600) always resolves to the latest version; version 1.0.0 is [10.5281/zenodo.23728601](https://doi.org/10.5281/zenodo.23728601).
 
 ## License
 

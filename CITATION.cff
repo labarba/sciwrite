@@ -8,6 +8,7 @@ authors:
     affiliation: The George Washington University
     orcid: "https://orcid.org/0000-0001-5812-2711"
 version: 1.0.0
+doi: 10.5281/zenodo.23728600
 date-released: 2026-10-28
 license: CC-BY-4.0
 repository-code: "https://github.com/labarba/sciwrite"
