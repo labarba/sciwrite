@@ -5,7 +5,7 @@ Versions follow [Semantic Versioning](https://semver.org/). Releases before
 1.0.0 could include breaking changes; from 1.0.0 on, breaking changes (renaming
 the skill, moving its files, removing a review mode) bump the major version.
 
-## 1.0.0 — 2026-10-27
+## 1.0.0 — 2026-10-28
 
 First stable release. The skill's name, file layout, review modes and install
 channels are now the public interface.
