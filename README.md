@@ -1,193 +1,173 @@
 # SciWrite — Manuscript Writing Review
 
-An [Agent Skill](https://agentskills.io) that reviews scientific and engineering manuscripts for writing quality, applying the methodology from Dr. Kristin Sainani's [*Writing in the Sciences*](https://www.coursera.org/learn/sciwrite) course at Stanford (2012).
+An [Agent Skill](https://agentskills.io) that reviews scientific and engineering manuscripts for writing quality, applying the methodology from Dr. Kristin Sainani's [*Writing in the Sciences*](https://www.coursera.org/learn/sciwrite) course at Stanford.
 
-## What This Skill Does
+## What this skill does
 
 Clear writing is not a cosmetic concern in science; it determines whether reviewers and readers can follow your argument. Yet most graduate students receive little formal training in scientific writing, and self-editing for clarity is difficult because you already know what you meant to say.
 
-This skill encodes a systematic editorial review process distilled from 30 video lectures on scientific writing, extended with Nature's published guidance on structuring a summary paragraph. When loaded into an AI tool, it performs six sequential audit passes on your manuscript text:
+This skill encodes a systematic editorial review distilled from 30 video lectures on scientific writing, extended with Nature's guidance on structuring a summary paragraph. It works on anything from a whole manuscript to a single sentence, in six audit passes:
 
-1. **Clutter extraction.** Flags dead-weight phrases, unnecessary jargon, and filler language, and provides concise replacements.
-2. **Voice and verb vitality.** Identifies passive constructions, smothered verbs (nominalizations), and weak verb choices, and suggests active alternatives.
-3. **Sentence architecture.** Evaluates sentence length, structure, and flow—flagging run-on sentences, misplaced modifiers, and paragraphs that lack a clear logical progression.
-4. **Keyword consistency.** Checks that key technical terms are used consistently throughout the manuscript, catching cases where synonyms introduce ambiguity.
-5. **Numerical and citation integrity.** Audits numerical values, units, and in-text citations for internal consistency (e.g., a value reported as 3.2 in the text but 3.4 in a table).
-6. **Summary paragraph structure.** Checks an abstract against the sequence of rhetorical moves Nature prescribes—field introduction, background, problem statement, result ("Here we show"), comparison to prior understanding, and broader context. Reports missing or misordered moves, per-move sentence budgets, total word count, numbers and abbreviations that are not essential, and terms an outside reader may stumble on.
+1. **Clutter.** Dead-weight phrases, empty openers ("There are several studies that…"), redundancies, and negative constructions, with concise replacements.
+2. **Voice and verbs.** Passive constructions that hide who did what, and smothered verbs ("performed an analysis of" → "analyzed").
+3. **Sentence and paragraph architecture.** Buried verbs, overloaded sentences, dangling modifiers, paragraphs without a clear main idea or topic sentence, and transitions that don't fit the logic. In full reviews, it also checks what each section must do: an Introduction that states the gap, Results that lead with findings, a Discussion that opens with the answer and states limitations.
+4. **Terminology.** Key terms, group names and acronyms used consistently, so the reader never wonders whether "heavier participants" are the "obese group".
+5. **Numbers and citations.** Values that disagree between text and tables, and statistics cited only to a review.
+6. **Summary paragraph structure.** An abstract checked against the sequence of moves Nature prescribes, from field context to "Here we show" to broader significance, with sentence budgets and word count.
 
-The skill supports five review modes: a full-manuscript review that runs all six passes, a single-section review, a targeted review that runs only the pass you specify (e.g., "fix passive voice"), an interactive mode that walks through the manuscript paragraph by paragraph with before/after examples, and an abstract review that runs the structural pass on its own. The output is a structured report with specific findings, concrete revisions, and severity tags. Abstract reviews additionally return a move-tagged rendering of the paragraph, labelling each sentence with the rhetorical function it performs so that a missing or misplaced move is visible at a glance.
+You can ask for a full review, a single section, a single pass ("check for passive voice"), an abstract review, or an interactive walk-through, paragraph by paragraph. Reports group repeated problems, tag each finding CRITICAL, MAJOR or MINOR, give its location, and show a concrete revision.
 
-Importantly, the skill does not alter scientific content, data, or technical claims. It improves how those claims are delivered.
+The skill does not alter scientific content, data, or claims, and it never makes a claim stronger or weaker on its own. It improves how your claims are delivered. It is not a substitute for technical peer review.
 
-## How This Skill Was Made
+## Install
 
-The creation of this skill illustrates a three-tool workflow that combined an agentic browser, a synthesis engine, and a skill-authoring assistant.
+A skill is a folder (`skills/sciwrite/`) holding `SKILL.md` and two reference files the skill reads when it needs them. Most tools install the whole folder from the release ZIP or from this repository.
 
-**Step 1: Extracting video URLs with an agentic browser.** The source material is a [YouTube playlist](https://www.youtube.com/playlist?list=PLVc-QdfGfSl2Ntc6CvIP83Nj_uHTSdNSw) of 30 lecture recordings from Sainani's course, posted under a Creative Commons Attribution license (CC-BY). To process them, I first needed the individual video URLs. Rather than clicking through each video's share menu 30 times, I opened the playlist in [Comet](https://comet.page) (an agentic browser by Perplexity) and instructed it to extract every URL, stripping the tracking parameters. In under a minute, the agent produced a clean list of all 30 URLs, a task that would have taken 15–20 minutes of tedious manual work.
+| Where you use AI | How to install |
+|---|---|
+| Claude (web, desktop, Cowork) | Upload the release ZIP under **Customize → Skills** |
+| Claude Code | `/plugin install sciwrite --marketplace labarba/sciwrite` |
+| ChatGPT | Upload the release ZIP under **Skills** (workspace plans) |
+| Gemini app | Upload the release ZIP under **Customize → Skills** |
+| Codex, Copilot, Cursor, Gemini CLI and other coding agents | `gh skill install labarba/sciwrite sciwrite` or `npx skills add labarba/sciwrite` |
+| Any other tool | Paste the three skill files into its custom instructions |
 
-**Step 2: Synthesizing the content with NotebookLM.** I pasted all 30 URLs into a new [Google NotebookLM](https://notebooklm.google.com/) notebook. NotebookLM ingested the video transcripts as sources and, using its Studio panel, I produced a Writing Standards Manual: a comprehensive narrative document distilling the key principles from all 30 lectures into a structured reference. The output captured the core ideas—strip sentences to their cleanest components, use active voice, resurrect smothered verbs, maintain keyword consistency—but it was formatted as a human-readable guideline, not as a machine-actionable skill file.
+The **release ZIP** is `sciwrite-<version>.zip`, attached to the [latest release](https://github.com/labarba/sciwrite/releases/latest). It holds the `sciwrite/` folder and nothing else. Don't use GitHub's green **Code → Download ZIP** button: that archive contains the whole repository.
 
-**Step 3: Converting the guideline into a SKILL.md file with Claude.** I pasted the full Writing Standards Manual into a Claude conversation, along with instructions to produce a properly formatted `SKILL.md` following the Agent Skills conventions, and a How-To file. Claude checked the skill format structure—YAML frontmatter, Markdown body, the relationship between the description field and trigger behavior—and produced two files: the `SKILL.md` itself, architected as an operational protocol with the five sequential audit passes and four review modes, and a companion `HOW-TO-USE.md` with installation instructions and example prompts. The skill-authoring step used Claude's built-in **skill creator** capabilities, making the process meta in the best sense: an AI tool creating instructions for an AI tool.
+Steps and menus below were checked in October 2026. These products change often; if a menu has moved, the links to each vendor's help page have the current steps.
 
-Three different AI tools, each doing what it does best. The browser agent handled the mechanical extraction. NotebookLM handled the synthesis of 30 video transcripts into a coherent document. Claude handled the architectural work of converting a human-readable guideline into a machine-actionable skill with proper formatting.
+> **Upgrading from version 0.1?** The skill was renamed from `manuscript-writing-review` to `sciwrite`. Remove the old skill first, so the two don't compete.
 
-**Step 4: Extending the skill with Nature's summary paragraph guidance.** The five original passes all operate at or below the sentence: they ask whether each sentence is well built, not whether the right sentences are present. Nature's [guide to authors](https://www.nature.com/documents/nature-summary-paragraph.pdf) supplies the missing layer—a prescribed sequence of rhetorical moves for a summary paragraph, with a sentence budget for each. Adding it meant classifying the guidance by how much architectural disruption it required: advice that could be absorbed into existing passes as new rows or clauses; advice that fit as a new contained pass; advice that required extending the mode table and severity definitions; and advice that could not be implemented at all without abandoning the skill's design as a post-hoc, deterministic review instrument. Nature's requirement that a summary paragraph be "comprehensible to a scientist in any discipline," for example, has no mechanical test, so the skill approximates it with a list of specific terms an outside reader may stumble on and reports them as advisory notes rather than as errors. Judging whether a paper has genuinely moved its field forward was left out entirely: it requires knowledge of the literature outside the document, and every other check in the skill is self-contained.
+### Claude (claude.ai, Claude desktop, Cowork)
 
-## What Is an Agent Skill?
+1. Make sure code execution is on: **Settings → Capabilities → Code execution and file creation**. On Enterprise plans, an owner must also enable skills for the organization.
+2. Go to **Customize → Skills**, click **+**, then **Create skill → Upload a skill**, and upload the release ZIP.
+3. Check that the skill's toggle is on.
 
-An Agent Skill is an industry-standard format for giving AI tools reusable, domain-specific instructions. It is a Markdown file (`SKILL.md`) with a short header that tells the AI *when* to use it and a body that tells the AI *how* to perform the task.
+The skill is then available in every chat and in Cowork, and it syncs to Claude Code when you're signed in with the same account. Skills are available on Free, Pro, Max, Team and Enterprise plans. See [Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills).
 
-Skills were introduced by Anthropic in October 2025 and published as an [open standard](https://agentskills.io) in December 2025. They are now supported across Claude, ChatGPT, GitHub Copilot, Cursor, and other AI tools. A skill you write once works across platforms and improves over time as you refine it.
+### Claude Code
 
-Think of a skill as a detailed rubric or style guide, except the reader is an AI assistant rather than a human colleague.
-
-## How to Use This Skill
-
-### In Claude.ai (recommended starting point)
-
-This is the simplest way to get started. No terminal or coding experience is required. There are two approaches, depending on whether you want the skill available everywhere or only within a specific project.
-
-**Option A: Install account-wide via Customize (recommended)**
-
-This makes the skill available in all your conversations and in Cowork.
-
-1. Download `sciwrite-<version>.zip` from the latest [release](https://github.com/labarba/sciwrite/releases/latest). (Don't use GitHub's green **Code → Download ZIP** button: that archive contains the whole repository, not just the skill.)
-2. Open [claude.ai](https://claude.ai). In the left sidebar, click **Customize** (the toolbox icon), then go to **Skills**.
-3. Click the **+** button, then **+ Create skill**, and upload the ZIP file.
-4. The skill will appear in your Skills list. Make sure its toggle is turned on.
-5. Start any conversation and ask Claude to review your writing. For example:
-
-   > Review the writing quality of my manuscript. Here is the Introduction section:
-   >
-   > [paste your text]
-
-Claude will recognize that the request matches the skill, load it, and produce a structured review report with specific findings and suggested revisions. You can also upload your manuscript as a PDF or paste individual sections.
-
-> **Note:** The release ZIP contains the `sciwrite/` skill folder at its root, which is what the upload expects. If you installed an earlier version named `manuscript-writing-review`, remove it first so the two don't compete.
-
-**Option B: Add to a specific Project's knowledge base**
-
-If you prefer to limit the skill to a particular project (for example, a project dedicated to a specific manuscript):
-
-1. Download the [`skills/sciwrite/SKILL.md`](skills/sciwrite/SKILL.md) file from this repository.
-2. Open or create a **Project** in Claude.ai.
-3. In the Project's knowledge base, click **Add content** and upload the `SKILL.md` file.
-4. Start a conversation inside that Project and ask Claude to review your writing.
-
-This approach keeps the skill scoped to one project, which is useful if you are working on multiple manuscripts with different conventions.
-
-### In Claude Code (terminal agent)
-
-**Install as a plugin (recommended).** This repository is also a Claude Code plugin marketplace. In a Claude Code session, run:
+This repository is a Claude Code plugin marketplace. In a session, run:
 
 ```
 /plugin install sciwrite --marketplace labarba/sciwrite
 ```
 
-On older versions of Claude Code, use two steps instead: `/plugin marketplace add labarba/sciwrite`, then `/plugin install sciwrite@sciwrite`. Run `/plugin marketplace update sciwrite` later to get new versions.
+From your shell, the same works as `claude plugin install sciwrite --marketplace labarba/sciwrite`. These one-step commands need Claude Code 2.1.275 or later in a session, 2.1.292 or later in the shell; on older versions, run `/plugin marketplace add labarba/sciwrite` and then `/plugin install sciwrite@sciwrite`. Third-party marketplaces don't auto-update by default: to get a new version, run `/plugin marketplace update sciwrite`, or turn on auto-update for it in the **Marketplaces** tab of `/plugin`.
 
-**Or copy the skill folder.** Copy `skills/sciwrite/` into `.claude/skills/` in your manuscript project (available in that project only) or into `~/.claude/skills/` (available in every project):
+To install without the plugin system, copy the folder into your personal or project skills directory:
 
 ```bash
 git clone https://github.com/labarba/sciwrite.git
-mkdir -p ~/.claude/skills
 cp -r sciwrite/skills/sciwrite ~/.claude/skills/
 ```
 
-The folder must be named `sciwrite` to match the skill's `name` field.
+### ChatGPT
 
-**Ask for a review.** Launch `claude` from your manuscript's directory and ask in plain language. Some example prompts, from broadest to most targeted:
+1. Open the **Skills** page (in recent versions it sits under **Plugins**), click **Create**, then **Upload from your computer**, and select the release ZIP.
+2. ChatGPT scans uploaded skills before they become available.
 
-- Full review: `Review the writing quality of draft.tex`
-- One section: `Review the writing in my Introduction (sections/introduction.tex)`
-- One pass: `Audit my Results for keyword consistency — make sure group names match what I defined in Methods`
-- Interactive: `Walk me through improving my Introduction, paragraph by paragraph`
+At the time of writing, OpenAI documents skills for workspace plans (Business, Enterprise, Edu, Healthcare), where an admin must allow skill uploads. Availability on personal plans was unclear, so check whether **Skills** appears in your account. Without it, use the "any other tool" method below in a Project's instructions. See [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt).
 
-Claude Code can also apply the edits for you when you ask (for example, `Apply the CRITICAL and MAJOR revisions to draft.tex`), or you can review them and make the changes yourself. Tell it your target journal so it can respect that journal's conventions.
+### Gemini app
 
-### In Claude's Cowork (desktop agent)
+Skills replace Gems in the Gemini app ([announcement](https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html)).
 
-If you installed the skill account-wide via Customize (Option A above), it is already available in Cowork—no additional setup needed.
+1. At [gemini.google.com](https://gemini.google.com), click **Customize** in the sidebar (under **More** if you don't see it), then **Skills**.
+2. Click **Create → Upload**, select the release ZIP, review the skill, and click **Create**.
+3. Gemini uses the skill when your request matches it; you can also call it by typing `/` (or `@`) in a chat.
 
-If you prefer to work with the file directly, you can also place the `SKILL.md` file in the folder you point Cowork at (or in a subfolder). Then ask Cowork to review a manuscript file in that same folder:
+Uploading works on the web and in the Mac app. You must be 18 or over, signed in, with Keep Activity on. To update to a new version, open the skill, choose **More → Replace skill**, and upload the new ZIP. Skills in Google Workspace apps are created separately from the Gemini app's and don't sync with them. See [Create and manage skills for Gemini Apps](https://support.google.com/gemini/answer/17094296).
 
-   > Review the writing quality of the manuscript draft in this folder.
+### Coding agents (Codex, GitHub Copilot, Cursor, Gemini CLI and others)
 
-### In ChatGPT
+Two command-line installers work across dozens of agents. With the [GitHub CLI](https://cli.github.com/manual/gh_skill_install):
 
-Because OpenAI has adopted the Agent Skills standard, you can use this skill in ChatGPT through a Custom GPT:
+```bash
+gh skill install labarba/sciwrite sciwrite --agent codex --scope user
+```
 
-1. Open the `SKILL.md` file and copy its full contents (everything below the closing `---` of the header).
-2. Go to [chat.openai.com](https://chat.openai.com), click your profile icon, then **My GPTs** → **Create a GPT**.
-3. In the **Configure** tab, paste the contents of the skill into the **Instructions** field. You may also want to add the YAML header's description text at the top so the GPT knows when to apply these instructions.
-4. Name the GPT something like "SciWrite Reviewer" and save it.
-5. Open the GPT and paste your manuscript text.
+Replace `codex` with your agent (`github-copilot`, `cursor`, `gemini-cli`, `claude-code`, …). Without `--scope user`, the skill installs into the current repository only.
 
-The output format and reasoning will follow the same structure as in Claude.
+Or with the [skills CLI](https://skills.sh), which asks which agents to install for:
 
-### In Google Gemini
+```bash
+npx skills add labarba/sciwrite
+```
 
-Gemini does not yet natively support the SKILL.md format, but you can achieve a similar result using a **Gem** (Gemini's equivalent of a custom assistant):
+### Any other AI tool
 
-1. Open [gemini.google.com](https://gemini.google.com) and navigate to **Gems** (in the left sidebar, or via the Gem manager).
-2. Create a new Gem. In the instructions field, paste the full body of the `SKILL.md` file (everything after the YAML header).
-3. Save the Gem and open a conversation with it.
-4. Paste your manuscript text and ask for a writing review.
+If your tool has no skill support, paste the skill into whatever holds persistent instructions (a custom assistant, a project, a system prompt). Paste all three files, in this order: [`SKILL.md`](skills/sciwrite/SKILL.md), [`references/section-guidance.md`](skills/sciwrite/references/section-guidance.md), and [`references/summary-paragraph.md`](skills/sciwrite/references/summary-paragraph.md). `SKILL.md` alone works for most reviews, but abstract reviews and section-level checks depend on the reference files.
 
-### General approach for any AI tool
+**Before installing any skill, read it.** A skill is instructions that your AI tool will follow, and some skills include scripts. This one is plain Markdown with no scripts.
 
-If your preferred AI tool is not listed above, the pattern is the same:
+## Using the skill
 
-1. Find the tool's mechanism for persistent instructions (custom assistants, system prompts, project instructions, or similar).
-2. Paste the contents of `SKILL.md` into that mechanism.
-3. Provide your manuscript text and ask for a review.
+Ask in plain language, and paste your text or point to a file. For example:
 
-The skill is plain Markdown with no dependencies on any specific platform. It works wherever you can give an AI tool a block of instructions to follow.
+- `Review the writing quality of draft.tex. I'm submitting to the Journal of Fluid Mechanics.`
+- `Review the writing in my Introduction (sections/introduction.tex)`
+- `Check my Results and Discussion for keyword consistency with Methods`
+- `Is my abstract too long for Nature? [paste abstract]`
+- `Can you make this sentence less clunky? "[sentence]"`
+- `Walk me through improving my Introduction, paragraph by paragraph`
 
-## Tips for Getting Good Results
+In a coding agent, the skill can also apply the revisions you accept (`Apply the CRITICAL and MAJOR revisions to draft.tex`); for LaTeX, it can suggest `latexdiff` to produce a marked-up copy for coauthors.
 
-**Provide enough text for context.** A single isolated sentence is hard to review for keyword consistency or logical flow. A full section or chapter gives the skill enough material to identify patterns—repeated nominalizations, inconsistent terminology, or structural problems that span multiple paragraphs.
+**Tips**
 
-**Specify the review mode if you have a specific need.** If you already know your weakness is passive voice, ask for a targeted review rather than a full pass. This produces faster, more focused feedback.
+- **Name your target journal,** especially for abstracts. Nature caps a summary paragraph at about 200 words and requires citations in it; most journals allow more words and forbid citations in the abstract. Without a journal, the skill applies Nature's defaults and says so.
+- **Give enough text for the check you want.** Terminology and number checks need the whole manuscript; a sentence is enough for clutter and verbs.
+- **Use the interactive mode to learn.** The paragraph-by-paragraph walk-through explains each change, which builds habits rather than fixing one draft.
+- **Review the output critically.** Your domain expertise is the final check. A flagged term may be standard in your field, and whether a number belongs in your abstract depends on what your result is. If a revision changes your meaning, say so and ask again.
 
-**Use the interactive mode for learning.** The paragraph-by-paragraph mode shows before/after revisions with explanations — useful for building long-term writing habits, not just fixing a single draft.
+## Customizing
 
-**Name your target journal when reviewing an abstract.** The structural pass is venue-dependent in ways that matter. Nature caps a summary paragraph at roughly 200 words and requires it to be fully referenced; most other journals allow more words and forbid citations in the abstract outright. If you do not say where you are submitting, the skill applies Nature's defaults and tells you it has done so — so a 250-word abstract bound for a journal that permits 250 will be flagged for length until you say otherwise.
-
-**Review the output critically.** The skill produces well-structured editorial feedback, but your domain expertise is the final quality check. Occasionally a "smothered verb" that the skill flags is actually the standard term in your field (e.g., "polymerization" is not a nominalization that needs fixing). Use your judgment. The same applies to the structural pass: whether a measurement is essential enough to keep in an abstract is a judgment call about what your result actually is, and the skill's suggestion is a prompt, not a verdict.
-
-**Iterate.** If a suggested revision changes your intended meaning, tell the AI why and ask it to try again. The skill's structured reasoning means the AI can explain *why* it flagged a particular sentence, which makes it easy to have a productive back-and-forth.
-
-## Customizing the Skill
-
-The skill encodes general principles of scientific writing clarity. You can extend it with discipline-specific or journal-specific conventions. For example, if your target journal has specific style requirements, you could add a section like:
+The skill encodes general principles. You can add conventions for your field or target journal as a new section in your copy of `SKILL.md`, for example:
 
 ```markdown
-## Journal-Specific Conventions
+## Journal-specific conventions
 
 Target journal: Journal of Fluid Mechanics (JFM)
 - Use "figure" (lowercase) in running text; "Figure" only at the start of a sentence.
 - Equations are referenced as (1), not Eq. (1), unless at the start of a sentence.
 - Use Oxford commas.
-- Abbreviations must be defined at first use in the abstract AND again at first use in the body text.
 ```
 
-You can also adjust the severity thresholds, add or remove entries from the clutter-phrase lookup table, or modify the review modes to match your workflow.
+You can also edit the clutter and smothered-verb tables, the severity definitions, or the section guidance.
+
+## What's in this repository
+
+```
+skills/sciwrite/
+├── SKILL.md                     # the skill: modes, gotchas, the six passes, report format
+├── references/
+│   ├── summary-paragraph.md     # Pass 6 and abstract-only rules, read when an abstract is reviewed
+│   └── section-guidance.md      # what each section must do, read in full and section reviews
+└── evals/                       # tests: output cases, answer key, trigger queries, baseline results
+.claude-plugin/                  # Claude Code plugin and marketplace manifests
+tools/                           # scripts that run and grade the tests
+```
+
+The tests run each case with and without the skill and grade the output against checkable assertions; see [`evals/README.md`](skills/sciwrite/evals/README.md). For how the skill was made and revised, see [HISTORY.md](HISTORY.md); for what changed in each version, the [CHANGELOG](CHANGELOG.md).
 
 ## Contributing
 
-If you use this skill and find an edge case it doesn't handle well—a field-specific writing convention it misjudges, a common clutter pattern it misses, or a false positive that comes up repeatedly—contributions are welcome. Open an issue describing the case, or submit a pull request with your proposed change.
+If you find an edge case the skill handles poorly—a field-specific convention it misjudges, a clutter pattern it misses, or a false positive that keeps coming up—open an issue describing it, or submit a pull request. A new test case in `evals/` that shows the problem is the most useful contribution of all.
+
+## How to cite
+
+If you use this skill in your work or teaching, please cite it using the information in [CITATION.cff](CITATION.cff) (GitHub's **Cite this repository** button formats it for you).
 
 ## License
 
-This skill is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). You are free to use, adapt, and share it, with attribution.
-
-The source material—Dr. Kristin Sainani's *Writing in the Sciences* video lectures—is published under a [Creative Commons Attribution (CC-BY)](https://creativecommons.org/licenses/by/4.0/) license.
+This skill is licensed under [CC BY 4.0](LICENSE). You are free to use, adapt, and share it, with attribution.
 
 ## Acknowledgments
 
-Developed as part of the course [MAE 6291: Generative AI for Engineering Research](https://barbagroup.github.io/mae6291-genai/) at the George Washington University School of Engineering and Applied Science, and shared through the [GW Engineering AI Academy](https://www.seas.gwu.edu/ai-academy).
+Developed as part of the course [MAE 6291: Generative AI for Engineering Research](https://barbagroup.github.io/mae6291-genai/) at the George Washington University School of Engineering and Applied Science, and shared through the [GW Engineering AI Academy](https://www.seas.gwu.edu/ai-academy). Pass 6 was contributed by [Kyle Niemeyer](https://github.com/kyleniemeyer).
 
-The writing methodology encoded in this skill is drawn from Dr. Kristin Sainani's [*Writing in the Sciences*](https://www.coursera.org/learn/sciwrite) course at Stanford University. The original video lectures are available on [YouTube](https://www.youtube.com/playlist?list=PLVc-QdfGfSl2Ntc6CvIP83Nj_uHTSdNSw) under a CC-BY license.
+The writing methodology is drawn from Dr. Kristin Sainani's [*Writing in the Sciences*](https://www.coursera.org/learn/sciwrite) course at Stanford University. The original video lectures are available on [YouTube](https://www.youtube.com/playlist?list=PLVc-QdfGfSl2Ntc6CvIP83Nj_uHTSdNSw) under a CC BY license.
 
-The summary paragraph structure encoded in the sixth pass follows Nature's guide to authors, ["How to construct a Nature summary paragraph"](https://www.nature.com/documents/nature-summary-paragraph.pdf) (September 2019), together with Nature's published formatting guidance for Articles. That document is the property of Springer Nature and is referenced here, not reproduced.
+The summary paragraph structure in Pass 6 follows Nature's guide to authors, ["How to construct a Nature summary paragraph"](https://www.nature.com/documents/nature-summary-paragraph.pdf) (September 2019). That document is the property of Springer Nature and is referenced here, not reproduced.
