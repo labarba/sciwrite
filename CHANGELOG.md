@@ -7,6 +7,15 @@ is 0.x, any release may include breaking changes.
 ## [Unreleased] — 0.2.0
 
 ### Changed
+- README rewritten with install steps checked in October 2026 for Claude
+  (web, desktop, Cowork), Claude Code (one-step plugin install), ChatGPT and
+  the Gemini app (native skill upload, replacing the Custom GPT and Gem
+  workarounds), and coding agents through `gh skill install` and
+  `npx skills add`. Tools without skill support get instructions to paste
+  all three skill files. The description of the passes matches the current
+  skill.
+- Moved "How This Skill Was Made" from the README to `HISTORY.md`, with a new
+  section on the version 0.2 revision. Fixed the broken Comet link.
 - Rewrote the description around what users ask for rather than a list of
   trigger phrases: it now covers requests of any length, down to a single
   pasted sentence, and names abstracts explicitly. On the trigger queries,
