@@ -34,7 +34,7 @@ A skill is a folder (`skills/sciwrite/`) holding `SKILL.md` and two reference fi
 | Codex, Copilot, Cursor, Gemini CLI and other coding agents | `gh skill install labarba/sciwrite sciwrite` or `npx skills add labarba/sciwrite` |
 | Any other tool | Paste the three skill files into its custom instructions |
 
-The **release ZIP** is `sciwrite-<version>.zip`, attached to the [latest release](https://github.com/labarba/sciwrite/releases/latest). It holds the `sciwrite/` folder and nothing else. Don't use GitHub's green **Code → Download ZIP** button: that archive contains the whole repository.
+The **release ZIP** is `sciwrite-<version>.zip`, attached to the [latest release](https://github.com/labarba/sciwrite/releases/latest). It holds the `sciwrite/` folder and nothing else. Don't use GitHub's green **Code → Download ZIP** button: that archive contains the whole repository. If Safari unzips the download into a folder, compress the `sciwrite` folder again (right-click → **Compress**) before uploading.
 
 Steps and menus below were checked in October 2026. These products change often; if a menu has moved, the links to each vendor's help page have the current steps.
 
