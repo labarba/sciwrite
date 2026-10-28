@@ -10,7 +10,9 @@ authors:
 version: 1.0.0
 doi: 10.5281/zenodo.23728600
 date-released: 2026-10-28
-license: CC-BY-4.0
+license:
+  - CC-BY-4.0
+  - BSD-3-Clause
 repository-code: "https://github.com/labarba/sciwrite"
 keywords:
   - agent skills

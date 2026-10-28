@@ -1,3 +1,5 @@
+# Copyright (c) 2026 Lorena A. Barba
+# SPDX-License-Identifier: BSD-3-Clause
 name: Validate and release
 
 on:

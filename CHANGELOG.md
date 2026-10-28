@@ -5,6 +5,14 @@ Versions follow [Semantic Versioning](https://semver.org/). Releases before
 1.0.0 could include breaking changes; from 1.0.0 on, breaking changes (renaming
 the skill, moving its files, removing a review mode) bump the major version.
 
+## Unreleased
+
+### Changed
+- The code (the Python scripts in `tools/` and the GitHub Actions workflow)
+  is now licensed under the BSD 3-Clause License, in `LICENSE-CODE`. The
+  skill, documentation and test passages stay under CC BY 4.0. The skill
+  itself contains no code, so its license is unchanged.
+
 ## 1.0.0 — 2026-10-28
 
 First stable release. The skill's name, file layout, review modes and install

@@ -166,7 +166,7 @@ The software is archived on Zenodo. The DOI [10.5281/zenodo.23728600](https://do
 
 ## License
 
-This skill is licensed under [CC BY 4.0](LICENSE). You are free to use, adapt, and share it, with attribution.
+The skill, its reference files, the documentation and the test passages are licensed under [CC BY 4.0](LICENSE): you are free to use, adapt, and share them, with attribution. The code (the Python scripts in `tools/` and the GitHub Actions workflow) is licensed under the [BSD 3-Clause License](LICENSE-CODE). Each code file says so in an `SPDX-License-Identifier` line at the top.
 
 ## Acknowledgments
 

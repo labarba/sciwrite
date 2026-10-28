@@ -1,3 +1,5 @@
+# Copyright (c) 2026 Lorena A. Barba
+# SPDX-License-Identifier: BSD-3-Clause
 """Run the SciWrite output and trigger tests through `claude -p`.
 
 Usage:

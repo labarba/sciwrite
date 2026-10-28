@@ -7,6 +7,6 @@
   },
   "homepage": "https://github.com/labarba/sciwrite",
   "repository": "https://github.com/labarba/sciwrite",
-  "license": "CC-BY-4.0",
+  "license": "CC-BY-4.0 AND BSD-3-Clause",
   "keywords": ["scientific-writing", "manuscript", "editing", "agent-skills"]
 }
