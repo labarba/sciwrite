@@ -20,6 +20,8 @@ Three different AI tools, each doing what it does best. The browser agent handle
 
 ## Version 1.0 (October 2026): audit, tests, and restructuring
 
+*The process is recorded in a video, ["The Making of an Agent Skill"](https://www.youtube.com/watch?v=mnlrYOe2w4A) (YouTube, 1 hour), with chapters for each step.*
+
 Six months after the first version, the Agent Skills ecosystem had changed: the [specification](https://agentskills.io/specification) gained optional fields and a recommended folder layout, its authors published guidance on writing descriptions and evaluating skills, and Google and OpenAI added native support for skills. Version 1.0 was built in a series of small pull requests, worked out with Claude Code, each reviewed and merged before the next began.
 
 1. **Audit and restructuring** ([#4](https://github.com/labarba/sciwrite/pull/4)). The audit found that the skill's `name` didn't match its folder, as the specification requires. The skill was renamed `sciwrite` and moved to `skills/sciwrite/`; the repository became a Claude Code plugin marketplace; and a GitHub Actions workflow now validates the skill and builds a release ZIP.

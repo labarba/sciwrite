@@ -152,7 +152,7 @@ skills/sciwrite/
 tools/                           # scripts that run and grade the tests
 ```
 
-The tests run each case with and without the skill and grade the output against checkable assertions; see [`evals/README.md`](skills/sciwrite/evals/README.md). For how the skill was made and revised, see [HISTORY.md](HISTORY.md); for what changed in each version, the [CHANGELOG](CHANGELOG.md).
+The tests run each case with and without the skill and grade the output against checkable assertions; see [`evals/README.md`](skills/sciwrite/evals/README.md). For how the skill was made and revised, see [HISTORY.md](HISTORY.md) and the video [The Making of an Agent Skill](https://www.youtube.com/watch?v=mnlrYOe2w4A); for what changed in each version, the [CHANGELOG](CHANGELOG.md).
 
 ## Contributing
 
